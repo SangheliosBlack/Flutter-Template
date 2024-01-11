@@ -12,8 +12,9 @@
 Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones sorprendentes con Flutter. Esta plantilla está diseñada para proporcionar una estructura organizada y eficiente para el desarrollo de aplicaciones móviles, permitiéndote centrarte en la creación de características innovadoras y una experiencia de usuario excepcional.
 
 <a href="https://stripe.com/">
-  <img alt="Stripe" src="https://img.shields.io/badge/Stripe-7455E8?style=for-the-badge&logo=Stripe" style="filter: invert(1);">
+  <img alt="Stripe" src="ruta-local-a-tu-logo.png" style="filter: invert(1);">
 </a>
+
 
 
 ## Descripción
