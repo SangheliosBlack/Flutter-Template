@@ -13,6 +13,10 @@ Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones 
 
 ![Version](https://img.shields.io/badge/Version-0.1.0-00d679?style=for-the-badge&logo=V)
 ![Stripe](https://img.shields.io/badge/Stripe-7455E8?style=for-the-badge&logo=Stripe&logoColor=white)
+![Socket.io](https://img.shields.io/badge/Socket.io-000000?style=for-the-badge&logo=Socket.io&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-4887E7?style=for-the-badge&logo=Firebase&logoColor=F4D208)
+
+
 
 
 ## Descripción
