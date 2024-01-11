@@ -1,68 +1,130 @@
-# Softnet Flutter APP SKELETON BY IO MERO
+# Flutter Template
 
-## INSTALLING
+![Flutter Logo](https://flutter.dev/assets/homepage/icon/icon-512.png)
 
-    - Clonar proyecto
-    - Navegar hacia archivo pubspec.yaml para instalat paquetes ( CTRL + S )
-    - Crear un archivo .env y copiar contenido del archivo .env.sample en caso de existir
-    - El proyecto se ejecuta por defecto en modo dev, configuraciones de rutas y ambientes en el directorio /lib/config.dart
-    - Se tiene activa la inyeccion de paquetes mediante Get it
+Descripción extensa de tu increíble aplicación construida con Flutter.
 
-    [GET IT] (https://pub.dev/packages/get_it)
+![Version](https://img.shields.io/badge/Version-0.1.0-00d679?style=for-the-badge&logo=V)
 
-## STATE MANAGMENT
+## Tabla de Contenidos
 
-    - EL proyecto usa Bloc, respetar la secuencia de inyeccion y los streams del mismo
+- [Requisitos Previos](#requisitos-previos)
+- [Instalación](#instalación)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Configuración](#configuración)
+- [Uso](#uso)
+- [Características](#características)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
 
-## ROUTER
-    
-    - Archivo de configuracion dentro del directorio raiz ./routes/app_router.dart
-    - La generacion de rutas automaticas se encuentra gestionado con Auto Route y el BuildRunner 
-    - Para mejor optimizacion de rutas agregar el prefijo "Page" al finalizar el nombre del Widget para evitar conflictos con metodos futuros y mejor organizaciom ejem "dashbaordPage"
-    - Parametros en rutas son agregados de manera autamica,nunca modificar el archivo app_router.gr.dart directamente
-    - Para generar nuevas rutas ejecutar el comando "flutter packages pub run build_runner build --delete-conflicting-outputs"
-    - Al modificar las rutas y sub-rutas los metodos para animar las transiciones se encuentras disponibles con CustomRoute instead AutoRoute defautl
+## Requisitos Previos
 
-    [AUTO ROUTE] (https://pub.dev/packages/auto_route)
-    [BUILD RUNNER] (https://pub.dev/packages/build_runner)
+- Dart SDK y Flutter SDK instalados
+- Otros requisitos específicos...
 
-## MODELS AND RESPONSE
+## Instalación
 
-    - Los respuestas se encuentran heredadas de una clase general "General Response" seguir el formato y el cast de la informacion por las request en el parametro T?
-    - Agregar modelos para cada clase de respuesta y evitar usar propiedades indexadas
+1. **Clona este repositorio :**
+   ```bash
+   git clone https://github.com/tuusuario/tuappflutter.git
 
-## ICONS & ADAPTATIVE FOREGROUNDS
+2. **Instala las dependencias :**
+    ```bash
+    flutter pub get
 
-    - La generacion de graficos para las diferentes tiendas son gestinados por el paquete Flutter Launcher Icons
-    - Dado el siguiente ejemplo, de no agregar adaptive_icon_background o adaptive_icon_foreground  se tomara el valor de image_path para las diferentes plataformas seleccionadas
+3. **Configuracion de Variables de Entorno**
+   - Crea un archivo .env en el directorio raíz.
+   - Sigue el formato especificado env.example.
 
-        image_path: "assets/images/icon.png"
-        adaptive_icon_background: "assets/images/2.png"
-        adaptive_icon_foreground: "assets/images/icon.png"
-    
-    [Flutter Launcher Icons] (https://pub.dev/packages/flutter_launcher_icons)
+4. **Inicia la aplicacion :**
+    ```bash
+    flutter run
 
-## STRIPE
-    
-    - La pasarela de pagos Stripe se encuentra habilitada, agregar la pk en uso al archivo .env dentro del directorio raiz del proyecto lib
-    - Metodos de pago, confirmacion de intentPayment se configura mediante el SDK gestionado por el mismo Stripe, nunca evaluar metodos por peticiones HTTP O HHTPS para evitar conflictos con PCI 
-    - A fin de pruebas anexo la lista de metodos de pago dados por el autor en la siguiete liga https://stripe.com/docs/testing
+## Estructura del Proyecto
 
-    [Flutter Stripe] (https://pub.dev/packages/flutter_stripe)
+El proyecto sigue una estructura organizada para facilitar la comprensión y mantenimiento del código. A continuación, se detalla la estructura del proyecto:
 
-### SECURITY
+- **/lib:** Contiene el código fuente de la aplicación Flutter.
+  - `/blocs`: Lógica de negocio y gestión del estado utilizando BLoC.
+  - `/helpers`: Funciones y utilidades auxiliares.
+  - `/routes`: Configuración de las rutas de la aplicación.
+  - `/services`: Lógica de servicios y comunicación con API.
+  - `/themes`: Configuración de temas y estilos.
+  - `/utils`: Utilidades generales.
 
-    - Configurar certificados de acceso y la obtencion de la misma en el archivo ./lib/confi/load_certificate.dart
-    - Servicio HHTP configurado en el archivo ./lib/services/http_services.dart no modoficar
+## Configuración
 
-## SOCKET SERVICE
+Instrucciones sobre cómo configurar el servidor, incluyendo variables de entorno y otros ajustes necesarios.
 
-    - El proyecto contiene el archivo de configuracion para comunicacion y el transporte mediante webSocket y Auto Connect
-    - La version estable en modo produccion funciona como cliente en la version socket_io_client: ^2.0.0-beta.4-nullsafety.0 y "socket.io": "^4.5.0" de lado del servidor;
+## Uso
+Detalles sobre cómo usar el servidor, ejemplos de llamadas a la API, y cualquier otra información relevante.
 
-    [Socket io Client] (https://pub.dev/packages/socket_io_client)
+# Características
 
-### SCAFFOLD
+El proyecto cuenta con las siguientes características, gracias a las dependencias utilizadas:
 
-    - El proyecto cuenta con sistema de login y register, configurar la ruta de inicio y ambiente para obtener acceso a los servicios
-    - Dashboard con pages basicas para el funcionamiento de nested pages por Auto Route
+- **[flutter_launcher_icons (^0.13.1)](https://pub.dev/packages/flutter_launcher_icons):** Permite personalizar los íconos de la aplicación para las plataformas Android e iOS.
+
+- **[liquid_pull_to_refresh (^3.0.1)](https://pub.dev/packages/liquid_pull_to_refresh):** Proporciona un widget de arrastre para actualizar similar a un líquido.
+
+- **[expandable_page_view (^1.0.17)](https://pub.dev/packages/expandable_page_view):** Ofrece una vista de página que se puede expandir para proporcionar una experiencia de usuario más dinámica.
+
+- **[curved_navigation_bar (^1.0.3)](https://pub.dev/packages/curved_navigation_bar):** Implementa una barra de navegación inferior curvada para una navegación más atractiva.
+
+- **[font_awesome_flutter (^10.5.0)](https://pub.dev/packages/font_awesome_flutter):** Ofrece acceso a la biblioteca de iconos Font Awesome en Flutter.
+
+- **[shared_preferences (^2.2.0)](https://pub.dev/packages/shared_preferences):** Facilita el almacenamiento persistente de pequeñas cantidades de datos clave-valor en la aplicación.
+
+- **[flutter_stripe (^9.5.0+1)](https://pub.dev/packages/flutter_stripe):** Permite la integración de pagos con la plataforma de Stripe.
+
+- **[flutter_dotenv (^5.1.0)](https://pub.dev/packages/flutter_dotenv):** Carga variables de entorno desde un archivo `.env` para la configuración de la aplicación.
+
+- **[fluttertoast (^8.2.2)](https://pub.dev/packages/fluttertoast):** Proporciona notificaciones Toast en la aplicación.
+
+- **[flutter_bloc (^8.1.3)](https://pub.dev/packages/flutter_bloc):** Implementa el patrón de estado BLoC para gestionar el estado de la aplicación de manera eficiente.
+
+- **[google_fonts (^5.1.0)](https://pub.dev/packages/google_fonts):** Permite el uso de fuentes personalizadas de Google Fonts en la aplicación.
+
+- **[flutter_svg (^2.0.7)](https://pub.dev/packages/flutter_svg):** Facilita la renderización de imágenes SVG en Flutter.
+
+- **[local_auth (^2.1.7)](https://pub.dev/packages/local_auth):** Brinda soporte para la autenticación biométrica y de huellas dactilares.
+
+- **[auto_route (^7.8.0)](https://pub.dev/packages/auto_route):** Simplifica la configuración de rutas de navegación en Flutter.
+
+- **[animate_do (^3.1.2)](https://pub.dev/packages/animate_do):** Proporciona animaciones atractivas para los elementos de la interfaz de usuario.
+
+- **[ansicolor (^2.0.2)](https://pub.dev/packages/ansicolor):** Permite la colorización de la salida en la consola para una mejor legibilidad de los logs.
+
+- **[equatable (^2.0.5)](https://pub.dev/packages/equatable):** Facilita la comparación y copia de objetos de manera eficiente.
+
+- **[hidable (^1.0.5)](https://pub.dev/packages/hidable):** Permite ocultar y mostrar elementos de la interfaz de usuario de manera dinámica.
+
+- **[logging (^1.2.0)](https://pub.dev/packages/logging):** Proporciona una infraestructura de registro para la aplicación.
+
+- **[get_it (^7.6.0)](https://pub.dev/packages/get_it):** Un contenedor de servicios para la inyección de dependencias.
+
+- **[http (^1.1.0)](https://pub.dev/packages/http):** Proporciona funcionalidades HTTP para realizar solicitudes y recibir respuestas.
+
+# Dependencias de Desarrollo
+
+- **[auto_route_generator (^7.2.0)](https://pub.dev/packages/auto_route_generator):** Genera código para la navegación declarativa.
+
+- **[flutter_lints (^2.0.0)](https://pub.dev/packages/flutter_lints):** Conjunto de reglas y configuraciones de linter para proyectos Flutter.
+
+- **[build_runner (^2.4.5)](https://pub.dev/packages/build_runner):** Automatiza la generación de código en tiempo de compilación.
+
+- **[flutter_test](https://pub.dev/packages/flutter_test):** Proporciona herramientas para escribir y ejecutar pruebas en proyectos Flutter.
+
+# Contribución
+
+Si deseas contribuir a este proyecto, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Agregando nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Crea un Pull Request.
+
+# Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.

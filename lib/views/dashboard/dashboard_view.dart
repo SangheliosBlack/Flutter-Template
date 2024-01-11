@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skeleton/helpers/extensions.dart';
+import 'package:flutter_template/helpers/extensions.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -15,7 +15,10 @@ class DashboardView extends StatelessWidget {
         children: [
           Text(
             "DASHBOARD PRINCIPAL",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.black),
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Colors.black),
           ),
         ],
       ),

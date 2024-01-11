@@ -5,12 +5,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:skeleton/blocs/auth_bloc/auth_bloc.dart';
-import 'package:skeleton/helpers/extensions.dart';
-import 'package:skeleton/helpers/meesages_app_helper.dart';
-import 'package:skeleton/views/auth/login_view.dart';
-import 'package:skeleton/views/auth/presentation_view.dart';
-import 'package:skeleton/views/auth/register_view.dart';
+import 'package:flutter_template/blocs/auth_bloc/auth_bloc.dart';
+import 'package:flutter_template/helpers/extensions.dart';
+import 'package:flutter_template/helpers/meesages_app_helper.dart';
+import 'package:flutter_template/views/auth/login_view.dart';
+import 'package:flutter_template/views/auth/presentation_view.dart';
+import 'package:flutter_template/views/auth/register_view.dart';
 
 @RoutePage()
 class AuthPage extends StatelessWidget {

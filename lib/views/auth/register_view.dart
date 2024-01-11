@@ -2,11 +2,10 @@ import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:skeleton/helpers/extensions.dart';
-import 'package:skeleton/helpers/meesages_app_helper.dart';
-import 'package:skeleton/themes/main_theme.dart';
-import 'package:skeleton/widgets/auth/text_field_widget.dart';
-
+import 'package:flutter_template/helpers/extensions.dart';
+import 'package:flutter_template/helpers/meesages_app_helper.dart';
+import 'package:flutter_template/themes/main_theme.dart';
+import 'package:flutter_template/widgets/auth/text_field_widget.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key, required this.pageController});

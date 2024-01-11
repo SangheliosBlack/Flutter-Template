@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skeleton/helpers/extensions.dart';
+import 'package:flutter_template/helpers/extensions.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});

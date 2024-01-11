@@ -1,7 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:skeleton/helpers/extensions.dart';
-
+import 'package:flutter_template/helpers/extensions.dart';
 
 class UsernameFieldWidget extends StatefulWidget {
   const UsernameFieldWidget({
@@ -83,6 +82,4 @@ class _UsernameFieldWidgetState extends State<UsernameFieldWidget> {
     }
     return null;
   }
-
-  
 }

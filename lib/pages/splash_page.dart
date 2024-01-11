@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeleton/blocs/auth_bloc/auth_bloc.dart';
-import 'package:skeleton/themes/main_theme.dart';
+import 'package:flutter_template/blocs/auth_bloc/auth_bloc.dart';
+import 'package:flutter_template/themes/main_theme.dart';
 import 'package:auto_route/auto_route.dart';
 
 @RoutePage()

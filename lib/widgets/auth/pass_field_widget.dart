@@ -2,8 +2,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
-import 'package:skeleton/blocs/auth_bloc/auth_bloc.dart';
-import 'package:skeleton/helpers/extensions.dart';
+import 'package:flutter_template/blocs/auth_bloc/auth_bloc.dart';
+import 'package:flutter_template/helpers/extensions.dart';
 
 class PassFieldWidget extends StatefulWidget {
   const PassFieldWidget({

@@ -2,12 +2,10 @@ import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:skeleton/models/auth_response.dart';
-import 'package:skeleton/repositories/auth_repository.dart';
-import 'package:skeleton/services/http_service.dart';
-import 'package:skeleton/services/local_storage.dart';
-
-
+import 'package:flutter_template/models/auth_response.dart';
+import 'package:flutter_template/repositories/auth_repository.dart';
+import 'package:flutter_template/services/http_service.dart';
+import 'package:flutter_template/services/local_storage.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

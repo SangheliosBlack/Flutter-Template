@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:skeleton/helpers/extensions.dart';
-import 'package:skeleton/themes/main_theme.dart';
+import 'package:flutter_template/helpers/extensions.dart';
+import 'package:flutter_template/themes/main_theme.dart';
 
 class Presentation extends StatelessWidget {
   final PageController pageController;

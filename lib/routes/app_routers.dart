@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 
-import 'package:skeleton/pages/pages.dart';
-import 'package:skeleton/views/views.dart';
+import 'package:flutter_template/pages/pages.dart';
+import 'package:flutter_template/views/views.dart';
 
 part 'app_routers.gr.dart';
 

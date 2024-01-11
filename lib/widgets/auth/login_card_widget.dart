@@ -2,12 +2,11 @@ import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:skeleton/blocs/auth_bloc/auth_bloc.dart';
-import 'package:skeleton/helpers/extensions.dart';
-import 'package:skeleton/themes/main_theme.dart';
-import 'package:skeleton/widgets/auth/pass_field_widget.dart';
-import 'package:skeleton/widgets/auth/username_field_widget.dart';
-
+import 'package:flutter_template/blocs/auth_bloc/auth_bloc.dart';
+import 'package:flutter_template/helpers/extensions.dart';
+import 'package:flutter_template/themes/main_theme.dart';
+import 'package:flutter_template/widgets/auth/pass_field_widget.dart';
+import 'package:flutter_template/widgets/auth/username_field_widget.dart';
 
 class LoginCard extends StatefulWidget {
   const LoginCard({

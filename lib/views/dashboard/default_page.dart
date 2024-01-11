@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hidable/hidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'package:skeleton/themes/main_theme.dart';
-import 'package:skeleton/views/dashboard/another_view.dart';
-import 'package:skeleton/views/dashboard/dashboard_view.dart';
-import 'package:skeleton/views/dashboard/profile_view.dart';
+import 'package:flutter_template/themes/main_theme.dart';
+import 'package:flutter_template/views/dashboard/another_view.dart';
+import 'package:flutter_template/views/dashboard/dashboard_view.dart';
+import 'package:flutter_template/views/dashboard/profile_view.dart';
 
 @RoutePage()
 class DashBoardDefaultPage extends StatefulWidget {

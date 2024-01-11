@@ -1,8 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:skeleton/themes/main_theme.dart';
-import 'package:skeleton/widgets/auth/login_card_widget.dart';
-
+import 'package:flutter_template/themes/main_theme.dart';
+import 'package:flutter_template/widgets/auth/login_card_widget.dart';
 
 class LoginView extends StatelessWidget {
   final PageController pageController;
@@ -21,10 +20,10 @@ class LoginView extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                      pageController.animateToPage(2,
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.linear);
-                    },
+                  pageController.animateToPage(2,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.linear);
+                },
                 child: Text(
                   'Registrate',
                   style: GoogleFonts.quicksand(

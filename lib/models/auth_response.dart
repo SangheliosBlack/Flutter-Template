@@ -1,14 +1,13 @@
 import 'dart:convert';
 
-import 'package:skeleton/helpers/service_message.dart';
-
+import 'package:flutter_template/helpers/service_message.dart';
 
 class AuthResponse<T> {
-  AuthResponse(
-      {required this.status,
-      required this.message,
-      this.usuario,
-      });
+  AuthResponse({
+    required this.status,
+    required this.message,
+    this.usuario,
+  });
 
   String status;
   String message;
@@ -16,11 +15,10 @@ class AuthResponse<T> {
 }
 
 class AuthRSuccess<T> extends AuthResponse<T> {
-  AuthRSuccess(
-      {String message = ServiceMessages.messageSuccess,
-      Usuario? usuario,
-      })
-      : super(
+  AuthRSuccess({
+    String message = ServiceMessages.messageSuccess,
+    Usuario? usuario,
+  }) : super(
           status: ServiceMessages.success,
           message: message,
           usuario: usuario,

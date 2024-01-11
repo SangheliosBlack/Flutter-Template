@@ -1,8 +1,7 @@
 import 'dart:convert';
 
-import 'package:skeleton/models/auth_response.dart';
-import 'package:skeleton/services/http_service.dart';
-
+import 'package:flutter_template/models/auth_response.dart';
+import 'package:flutter_template/services/http_service.dart';
 
 class AuthRepository {
   final HttpService httpService;

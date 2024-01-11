@@ -1,26 +1,40 @@
-name: skeleton
-description: A new Flutter project.
+# Nombre del proyecto
+name: flutter_template
+
+# Descripción del proyecto
+description: Template for developing an application in Flutter.
+
+# La siguiente línea evita la publicación accidental del paquete en pub.dev
 publish_to: "none"
+
+# Versión del proyecto
 version: 0.1.0
 
+# Requerimientos de la versión del SDK de Dart
 environment:
   sdk: ">=3.1.0 <4.0.0"
 
+# Dependencias del proyecto
 dependencies:
   flutter_launcher_icons: ^0.13.1
   liquid_pull_to_refresh: ^3.0.1
+  expandable_page_view: ^1.0.17
   curved_navigation_bar: ^1.0.3
   font_awesome_flutter: ^10.5.0
-  expandable_page_view: ^1.0.17
   shared_preferences: ^2.2.0
+  flutter_stripe: ^9.5.0+1
+  flutter_dotenv: ^5.1.0
+  fluttertoast: ^8.2.2
   flutter_bloc: ^8.1.3
   google_fonts: ^5.1.0
-  fluttertoast: ^8.2.2
   flutter_svg: ^2.0.7
+  local_auth: ^2.1.7
   auto_route: ^7.8.0
   animate_do: ^3.1.2
+  ansicolor: ^2.0.2
   equatable: ^2.0.5
   hidable: ^1.0.5
+  logging: ^1.2.0
   get_it: ^7.6.0
   http: ^1.1.0
   flutter:
@@ -28,6 +42,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+# Dependencias de desarrollo
 dev_dependencies:
   auto_route_generator: ^7.2.0
   flutter_lints: ^2.0.0
@@ -35,13 +50,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+# Configuración de flutter_launcher_icons para personalizar los íconos de la aplicación
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/icon.png"
-  adaptive_icon_background: "assets/images/2.png"
-  adaptive_icon_foreground: "assets/images/icon.png"
+  image_path: "assets/images/sh.png"
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "assets/images/sh.png"
+  background_color_ios: "#000000"
+  image_path_ios: "assets/images/sh.png"
 
+# Configuración general de Flutter
 flutter:
   uses-material-design: true
   assets:

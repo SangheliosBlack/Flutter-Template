@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:skeleton/helpers/extensions.dart';
+import 'package:flutter_template/helpers/extensions.dart';
 
 class TextFieldWidget extends StatefulWidget {
   const TextFieldWidget({
