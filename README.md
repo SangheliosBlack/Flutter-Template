@@ -148,10 +148,16 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 
 # Contribuidores
 
-<a href="https://github.com/tu-usuario/tu-repositorio/graphs/contributors">
-  <img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" />
-</a>
+<style>
+  .profile-image {
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+</style>
 
+<a href="https://github.com/tu-usuario/tu-repositorio/graphs/contributors">
+  <img class="profile-image" src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" />
+</a>
 # Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
