@@ -148,13 +148,7 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 
 ## Contribuidores
 
-[![Tu Nombre](https://avatars.githubusercontent.com/u/50421116?s=96&v=4)](https://github.com/SangheliosBlack){:style="border-radius: 50%;"}
-
-<a href="https://github.com/SangheliosBlack">
-  <img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" width="48" height="48" style="border-radius:50%">
-</a>
-t
-
+[![Julio Villagrana](https://avatars.githubusercontent.com/u/50421116?s=96&v=4)](https://github.com/SangheliosBlack)
 
 # Licencia
 
