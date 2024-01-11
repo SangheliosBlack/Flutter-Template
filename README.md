@@ -148,8 +148,8 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 
 # Contribuidores
 
-<a href="https://github.com/SangheliosBlack/Flutter-Template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=/SangheliosBlack/Flutter-Template=0" />
+<a href="https://github.com/tu-usuario/tu-repositorio/graphs/contributors">
+  <img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" />
 </a>
 
 # Licencia
