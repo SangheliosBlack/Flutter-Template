@@ -146,11 +146,14 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
 5. Crea un Pull Request.
 
-# Contribuidores
+## Contribuidores
 
-[![Contributors](https://github.com/tu-usuario/tu-repositorio/graphs/contributors)](https://github.com/tu-usuario/tu-repositorio/graphs/contributors)
+[![Tu Nombre](https://avatars.githubusercontent.com/u/50421116?s=96&v=4)](https://github.com/SangheliosBlack){:style="border-radius: 50%;"}
 
-<img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" style="border-radius: 50%; border: 2px solid white;" />
+<a href="https://github.com/SangheliosBlack">
+  <img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" width="48" height="48" style="border-radius:50%">
+</a>
+t
 
 
 # Licencia
