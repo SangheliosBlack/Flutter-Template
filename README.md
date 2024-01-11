@@ -146,6 +146,10 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
 5. Crea un Pull Request.
 
+<a href="https://github.com/aaamoon/copilot-gpt4-service/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=aaamoon/copilot-gpt4-service&anon=0" />
+</a>
+
 # Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
