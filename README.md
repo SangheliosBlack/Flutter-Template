@@ -148,9 +148,9 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 
 # Contribuidores
 
-<a href="https://github.com/tu-usuario/tu-repositorio/graphs/contributors">
-  <img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" style="border-radius: 50%; border: 2px solid white;" />
-</a>
+[![Contributors](https://github.com/tu-usuario/tu-repositorio/graphs/contributors)](https://github.com/tu-usuario/tu-repositorio/graphs/contributors)
+
+<img src="https://avatars.githubusercontent.com/u/50421116?s=96&v=4" style="border-radius: 50%; border: 2px solid white;" />
 
 
 # Licencia
