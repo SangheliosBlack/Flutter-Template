@@ -16,10 +16,7 @@ Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones 
 ![Socket.io](https://img.shields.io/badge/Socket.io-000000?style=for-the-badge&logo=Socket.io&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-4887E7?style=for-the-badge&logo=Firebase&logoColor=F4D208)
 ![Gitlab](https://img.shields.io/badge/Gitlab-FFFFFF?style=for-the-badge&logo=Gitlab&logoColor=#D74A2C)
-
-
-
-
+![Mockito](https://img.shields.io/badge/Mockito-DBDFFF?style=for-the-badge&logo=Dart&logoColor=black)
 
 ## Descripción
 
@@ -99,8 +96,6 @@ En el directorio `test`, encontrarás las siguientes pruebas unitarias:
 | ├── data_persistence_test.dart  |
 | └── ui_update_test.dart         |
 
-
-
 # Características
 
 El proyecto cuenta con las siguientes características, gracias a las dependencias utilizadas:
@@ -146,6 +141,8 @@ El proyecto cuenta con las siguientes características, gracias a las dependenci
 - **[get_it (^7.6.0)](https://pub.dev/packages/get_it):** Un contenedor de servicios para la inyección de dependencias.
 
 - **[http (^1.1.0)](https://pub.dev/packages/http):** Proporciona funcionalidades HTTP para realizar solicitudes y recibir respuestas.
+
+- **[mockito (^5.0.15)](https://pub.dev/packages/mockito):** Permite la creación de objetos de imitación para realizar pruebas de manera controlada.
 
 # Dependencias de Desarrollo
 
