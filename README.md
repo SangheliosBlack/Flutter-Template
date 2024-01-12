@@ -47,7 +47,7 @@ Con un diseño extensible y modular, esta plantilla te ofrece la flexibilidad ne
 
 1. **Clona este repositorio :**
    ```bash
-   git clone https://github.com/tuusuario/tuappflutter.git
+   git clone https://github.com/SangheliosBlack/Flutter-Template.git
 
 2. **Instala las dependencias :**
     ```bash
