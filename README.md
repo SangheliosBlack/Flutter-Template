@@ -17,6 +17,9 @@ Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones 
 ![Firebase](https://img.shields.io/badge/Firebase-4887E7?style=for-the-badge&logo=Firebase&logoColor=F4D208)
 ![Gitlab](https://img.shields.io/badge/Gitlab-FFFFFF?style=for-the-badge&logo=Gitlab&logoColor=#D74A2C)
 ![Mockito](https://img.shields.io/badge/Mockito-DBDFFF?style=for-the-badge&logo=Dart&logoColor=black)
+![Flutter Launcher Icons](https://img.shields.io/badge/Flutter_Launcher_Icons-^0.13.1-00d679?style=for-the-badge&logo=Flutter)
+![Liquid Pull to Refresh](https://img.shields.io/badge/Liquid_Pull_to_Refresh-^3.0.1-00d679?style=for-the-badge&logo=Flutter)
+![Expandable Page View](https://img.shields.io/badge/Expandable_Page_View-^1.0.17-00d679?style=for-the-badge&logo=Flutter)
 
 ## Descripción
 
