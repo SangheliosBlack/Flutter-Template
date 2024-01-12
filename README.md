@@ -83,17 +83,22 @@ Detalles sobre cómo usar el servidor, ejemplos de llamadas a la API, y cualquie
 
 ## Pruebas Unitarias
 
-- test
-  - business_logic_test.dart
-  - utility_functions_test.dart
-  - external_services_test.dart
-  - state_management_test.dart
-  - ui_widgets_test.dart
-  - navigation_test.dart
-  - error_handling_test.dart
-  - performance_test.dart
-  - data_persistence_test.dart
-  - ui_update_test.dart
+En el directorio `test`, encontrarás las siguientes pruebas unitarias:
+
+| Archivo                        |
+| ------------------------------ |
+| test                           |
+| ├── business_logic_test.dart   |
+| ├── utility_functions_test.dart|
+| ├── external_services_test.dart|
+| ├── state_management_test.dart |
+| ├── ui_widgets_test.dart        |
+| ├── navigation_test.dart        |
+| ├── error_handling_test.dart    |
+| ├── performance_test.dart       |
+| ├── data_persistence_test.dart  |
+| └── ui_update_test.dart         |
+
 
 
 # Características
