@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -41,72 +40,70 @@ class AuthPage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              SlideInUp(
-                child: Positioned(
-                  bottom: 0,
-                  left: 0,
-                  child: SizedBox(
-                    width: context.width,
-                    height: context.height,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 35),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                  offset: const Offset(-15, -15),
-                                ),
-                              ],
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(25),
-                                  topRight: Radius.circular(25))),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Bienvenido a",
-                                style:
-                                    GoogleFonts.quicksand(color: Colors.black),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(top: 10),
-                                width: 195,
-                                height: 55,
-                                child: SvgPicture.asset(
-                                  fit: BoxFit.contain,
-                                  'assets/svg/name_app.svg',
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 25,
-                              ),
-                              ExpandablePageView(
-                                physics: const NeverScrollableScrollPhysics(),
-                                controller: pageController,
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Presentation(
-                                    pageController: pageController,
-                                  ),
-                                  LoginView(
-                                    pageController: pageController,
-                                  ),
-                                  RegisterView(
-                                    pageController: pageController,
-                                  )
-                                ],
+              Positioned(
+                bottom: 0,
+                left: 0,
+                child: SizedBox(
+                  width: context.width,
+                  height: context.height,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 35),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.1),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: const Offset(-15, -15),
                               ),
                             ],
-                          ),
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(25),
+                                topRight: Radius.circular(25))),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Bienvenido a",
+                              style:
+                                  GoogleFonts.quicksand(color: Colors.black),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 10),
+                              width: 195,
+                              height: 55,
+                              child: SvgPicture.asset(
+                                fit: BoxFit.contain,
+                                'assets/svg/name_app.svg',
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            ExpandablePageView(
+                              physics: const NeverScrollableScrollPhysics(),
+                              controller: pageController,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Presentation(
+                                  pageController: pageController,
+                                ),
+                                LoginView(
+                                  pageController: pageController,
+                                ),
+                                RegisterView(
+                                  pageController: pageController,
+                                )
+                              ],
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               )

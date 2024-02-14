@@ -6,7 +6,6 @@ class MockHttpService extends Mock implements HttpService {}
 
 void main() {
   test('Ejemplo de prueba unitaria con Mock', () {
-    final mockHttpService = MockHttpService();
     // Configura el comportamiento del servicio simulado
     //when(mockHttpService.getData()).thenReturn('Datos simulados');
 

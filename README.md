@@ -47,20 +47,28 @@ Con un diseño extensible y modular, esta plantilla te ofrece la flexibilidad ne
 ## Instalación
 
 1. **Clona este repositorio :**
+
    ```bash
    git clone https://github.com/SangheliosBlack/Flutter-Template.git
 
+   ```
+
 2. **Instala las dependencias :**
-    ```bash
-    flutter pub get
+
+   ```bash
+   flutter pub get
+
+   ```
 
 3. **Configuracion de Variables de Entorno**
+
    - Crea un archivo .env en el directorio raíz.
    - Sigue el formato especificado env.example.
 
 4. **Inicia la aplicacion :**
-    ```bash
-    flutter run
+   ```bash
+   flutter run
+   ```
 
 ## Estructura del Proyecto
 
@@ -79,19 +87,20 @@ El proyecto sigue una estructura organizada para facilitar la comprensión y man
 Instrucciones sobre cómo configurar el servidor, incluyendo variables de entorno y otros ajustes necesarios.
 
 ## Uso
+
 Detalles sobre cómo usar el servidor, ejemplos de llamadas a la API, y cualquier otra información relevante.
 
 ## Pruebas Unitarias
 
 En el directorio `test`, encontrarás las siguientes pruebas unitarias:
 
-| Archivo                        |
-| ------------------------------ |
-| test                           |
-| ├── business_logic_test.dart   |
-| ├── utility_functions_test.dart|
-| ├── external_services_test.dart|
-| ├── state_management_test.dart |
+| Archivo                         |
+| ------------------------------- |
+| test                            |
+| ├── business_logic_test.dart    |
+| ├── utility_functions_test.dart |
+| ├── external_services_test.dart |
+| ├── state_management_test.dart  |
 | ├── ui_widgets_test.dart        |
 | ├── navigation_test.dart        |
 | ├── error_handling_test.dart    |

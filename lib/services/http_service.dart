@@ -24,7 +24,10 @@ class HttpService {
   }
 
   Map<String, String> _headers() {
-    return {HttpHeaders.authorizationHeader: "Bearer $token"};
+    return {
+      HttpHeaders.authorizationHeader: "Bearer $token",
+      HttpHeaders.contentTypeHeader: ContentType.json.toString(),
+    };
   }
 
   Future<http.Response> post(
