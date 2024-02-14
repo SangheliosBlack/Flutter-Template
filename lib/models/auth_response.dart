@@ -36,63 +36,67 @@ class AuthRError<T> extends AuthResponse<T> {
         );
 }
 
+List<Usuario> listUsuarioFromJson(List<dynamic> jsonList){
+  return jsonList.map((json) => Usuario.fromJson(json)  ).toList();
+}
+
 Usuario usuarioFromJson(String str) => Usuario.fromJson(json.decode(str));
 
 String usuarioToJson(Usuario data) => json.encode(data.toJson());
 
 class Usuario {
-  int id;
-  dynamic alias;
+  String uid;
   String email;
-  String firstName;
-  String fatherLastName;
-  String motherLastName;
-  dynamic profilePhoto;
-  dynamic phone;
-  bool active;
+  String name;
+  String phone;
+  bool online;
+  String role;
   DateTime createdAt;
-  Company company;
 
   Usuario({
-    required this.id,
-    required this.alias,
+    required this.role,
+    required this.uid,
     required this.email,
-    required this.firstName,
-    required this.fatherLastName,
-    required this.motherLastName,
-    required this.profilePhoto,
+    required this.name,
     required this.phone,
-    required this.active,
+    required this.online,
     required this.createdAt,
-    required this.company,
   });
+  Usuario copyWith({
+    String? role,
+    String? uid,
+    String? email,
+    String? name,
+    String? phone,
+    bool? online,
+    DateTime? createdAt,
+  }) {
+    return Usuario(
+      role: role ?? this.role,
+      uid: uid ?? this.uid,
+      email: email ?? this.email,
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      online: online ?? this.online,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
 
   factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
-        id: json["id"],
-        alias: json["alias"],
+        uid: json["uid"],
         email: json["email"],
-        firstName: json["first_name"],
-        fatherLastName: json["father_last_name"],
-        motherLastName: json["mother_last_name"],
-        profilePhoto: json["profile_photo"],
         phone: json["phone"],
-        active: json["active"],
-        createdAt: DateTime.parse(json["created_at"]),
-        company: Company.fromJson(json["company"]),
+        online: json["online"],
+        createdAt: DateTime.parse(json["createdAt"]),
+        name: json["name"], role: json["role"],
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "alias": alias,
+        "id": uid,
         "email": email,
-        "first_name": firstName,
-        "father_last_name": fatherLastName,
-        "mother_last_name": motherLastName,
-        "profile_photo": profilePhoto,
-        "phone": phone,
-        "active": active,
+        "online": online,
+        "active": online,
         "created_at": createdAt.toIso8601String(),
-        "company": company.toJson(),
       };
 }
 

@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_template/models/auth_response.dart';
+import 'package:flutter_template/models/general_response.dart';
 import 'package:flutter_template/repositories/auth_repository.dart';
 import 'package:flutter_template/services/http_service.dart';
 import 'package:flutter_template/services/local_storage.dart';
@@ -16,6 +17,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LoginEvent>(_login);
     on<IsLoggedIn>(_isLoggedIn);
     on<LogoutEvent>(_logOut);
+    on<LoginGuest>(_loginGuest);
   }
 
   _logOut(LogoutEvent event, Emitter<AuthState> emit) async {
@@ -39,6 +41,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  
+
   _isLoggedIn(IsLoggedIn event, Emitter<AuthState> emit) async {
     emit(AuthLoading());
 
@@ -58,6 +62,30 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     } else {
       emit(const AuthError(message: ""));
+    }
+  }
+
+  _loginGuest(LoginGuest event, Emitter<AuthState> emit) async {
+    try {
+      emit(AuthLoading());
+
+      await Future.delayed(const Duration(seconds: 3));
+
+      final response = await authRepository.createGuest(
+          email: event.email,
+          firstName: event.firstName,
+          fatherLastName: event.fatherLastName,
+          motherLastName: event.motherLastName,
+          phone: event.phone,
+          password: event.password);
+
+      if (response is ResponseSuccess) {
+        emit(AuthSuccess(usuario: response.data));
+      } else {
+        emit(AuthError(message: response.message));
+      }
+    } catch (e) {
+      emit(const AuthError(message: "Error desconocido"));
     }
   }
 }

@@ -47,12 +47,17 @@ dependencies:
 # Dependencias de desarrollo
 dev_dependencies:
   auto_route_generator: ^7.2.0
+  flutter_native_splash: ^2.3.10
   build_runner: ^2.4.5
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
 # Configuración de flutter_launcher_icons para personalizar los íconos de la aplicación
+
+# Run command to generate .gr file
+# 1) flutter pub run flutter_launcher_icons:main
+
 flutter_launcher_icons:
   android: true
   ios: true
@@ -61,6 +66,18 @@ flutter_launcher_icons:
   adaptive_icon_foreground: "assets/images/sh.png"
   background_color_ios: "#000000"
   image_path_ios: "assets/images/sh.png"
+
+#Configuracion Native Splash
+
+# Run command to generate splash screen
+# 1) flutter clean
+# 2) flutter pub get
+# 3) flutter pub run flutter_native_splash:create
+
+flutter_native_splash:
+  color: '#ffffff' 
+  image: assets/images/logo.png
+# background_image:src
 
 # Configuración general de Flutter
 flutter:

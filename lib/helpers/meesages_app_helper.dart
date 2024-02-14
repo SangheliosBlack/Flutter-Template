@@ -22,18 +22,25 @@ class AppMessages {
           textColor: textColor,
           fontSize: fontSize);
 
+  
   static showSnackBar(
-          {required BuildContext context, required String message}) =>
+          {required BuildContext context,
+          required String message,
+          backgroundColor = Colors.black}) =>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
+          behavior: SnackBarBehavior.floating,
           content: Text(
             message,
             style: GoogleFonts.quicksand(color: Colors.white),
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: backgroundColor,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                  bottomLeft: Radius.circular(25),
+                  bottomRight: Radius.circular(25))),
           duration: const Duration(seconds: 3),
           closeIconColor: Colors.white,
           elevation: 1,

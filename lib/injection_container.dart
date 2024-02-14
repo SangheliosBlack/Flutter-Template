@@ -1,3 +1,4 @@
+import 'package:flutter_template/blocs/register_bloc/register_bloc.dart';
 import 'package:flutter_template/config/config.dart';
 import 'package:flutter_template/providers/socket_service.dart';
 import 'package:get_it/get_it.dart';
@@ -10,6 +11,7 @@ final sl = GetIt.I;
 Future<void> initLocator() async {
   //*BLOCs
   sl.registerFactory(() => AuthBloc(authRepository: sl()));
+  sl.registerFactory(() => RegisterBloc());
   //*REPOSITORIEs
   sl.registerFactory(() => AuthRepository(httpService: sl()));
   //*SERVICEs

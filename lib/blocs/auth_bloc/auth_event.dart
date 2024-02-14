@@ -33,3 +33,20 @@ class EditActiveUser extends AuthEvent {
   @override
   List<Object> get props => [];
 }
+
+class LoginGuest extends AuthEvent {
+  final String email;
+  final String firstName;
+  final String fatherLastName;
+  final String motherLastName;
+  final String phone;
+  final String password;
+
+  const LoginGuest( { required this.email,required this.firstName,required this.fatherLastName,
+   required   this.motherLastName,required this.phone,required this.password});
+
+  @override
+  List<Object> get props =>
+      [email, firstName, fatherLastName, motherLastName, phone, password];
+}
+
