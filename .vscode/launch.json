@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "name": "Template Flutter (DEV)",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define-from-file=env/dev.json",
+        "--flavor",
+        "development"
+      ]
+    }
+  ]
+}

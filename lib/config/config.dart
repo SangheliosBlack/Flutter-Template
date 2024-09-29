@@ -1,29 +1,32 @@
-// config_dev.dart
-
 import 'package:ansicolor/ansicolor.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_template/core/utils/constants/environments.dart';
 import 'package:flutter_template/helpers/colorized.dart';
 import 'package:flutter_template/helpers/logger.dart';
 import 'package:logging/logging.dart';
 
 class Developer {
-  final backendUrl = dotenv.env['BACKEND_URL']!;
-  final port = dotenv.env['PORT']!;
+
+  final pathUrl = Environments.pathUrl;
+  
+  final port = Environments.port;
   Logger logger = LogHelper.getLogger(LogNames.SERVER_CONNECTION);
 
   String apiUrl() {
+
     if (port.isNotEmpty) {
-      logger.info(colorize(
-          "Conectado a la dirección $backendUrl en el puerto $port",
-          AnsiPen()..green()));
+
+      logger.info(colorize("Connected to the address $apiUrl on port $port", AnsiPen()..green()));
+
     } else {
-      logger.info("Conectado a la dirección $backendUrl");
+      
+      logger.info(colorize("Connected to the address $pathUrl", AnsiPen()..green));
+
     }
 
     if (port.isNotEmpty) {
-      return '$backendUrl:$port';
+      return '$pathUrl:$port';
     } else {
-      return backendUrl;
+      return pathUrl;
     }
   }
 }
