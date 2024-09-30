@@ -22,6 +22,12 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 def appName="FlutterTemplate"
 
 android {
@@ -54,26 +60,43 @@ android {
     }
 
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+        debug {
+            debuggable true
+            if (!keystorePropertiesFile.exists()) {
+                signingConfig signingConfigs.debug
+            } else{
+                signingConfig signingConfigs.release
+            }
+        }
+        profile {
+            debuggable false
+            if (!keystorePropertiesFile.exists()) {
+                signingConfig signingConfigs.debug
+            } else{
+                signingConfig signingConfigs.release
+            }
         }
     }
 
     flavorDimensions "default"
         productFlavors {
             development {
-            dimension "default"
-            applicationIdSuffix ".development"
-            versionNameSuffix "-dev"
-            resValue "string","app_name","[D] $appName"
+                dimension "default"
+                applicationIdSuffix ".development"
+                versionNameSuffix "-dev"
+                resValue "string","app_name","[D] $appName"
             }
         }
         
     project.android.applicationVariants.all { variant ->
-        variant.outputs.all {
-            outputFileName = "${variant.name}-${variant.versionName}-${variant.versionCode}.apk"
+        variant.outputs.all { output ->
+
+            def variantName = variant.name.capitalize()
+            def versionName = variant.versionName
+            def versionCode = variant.versionCode
+            
+            outputFileName = "${project.name}-${variantName}-${versionName}-${versionCode}.apk"
+
         }
     }
 }
