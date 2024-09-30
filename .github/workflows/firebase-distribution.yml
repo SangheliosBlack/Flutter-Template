@@ -3,7 +3,7 @@ name: Build and Distribute
 on:
   push:
     branches:
-      - development
+      - feature/refactor-template
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
       - name: Upload to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.0.2
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
           token: ${{ secrets.FIREBASE_TOKEN }}
