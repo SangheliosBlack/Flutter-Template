@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 def appName="FlutterTemplate"
 
 android {
-    namespace "com.example.flutter_template"
+    namespace "com.flutter.template"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
