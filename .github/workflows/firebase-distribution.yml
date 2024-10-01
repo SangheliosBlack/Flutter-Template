@@ -13,14 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Grant execute permission for increment_version.sh
-        run: chmod +x ./scripts/increment_version.sh
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -43,25 +35,6 @@ jobs:
       - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
-      - name: Get latest changelog entry
-        id: get_changelog_diff
-        run: |
-          last_commit=$(git rev-parse HEAD)
-          previous_commit=$(git rev-parse HEAD~1)
-          
-          # Obtener las líneas que se han agregado al CHANGELOG.md en el último commit
-          added_lines=$(git diff --unified=0 "$previous_commit" "$last_commit" CHANGELOG.md | grep '^+[^+]' | sed 's/^+//')
-          
-          # Verificar si hay líneas nuevas y establecer la salida
-          if [ -n "$added_lines" ]; then
-              echo "Líneas nuevas en el changelog:"
-              echo "$added_lines"
-              echo "::set-output name=changelog::$(echo "$added_lines")"
-          else
-              echo "No se han agregado nuevas líneas al changelog."
-              echo "::set-output name=changelog::''"  # Salida vacía si no hay nuevas líneas
-          fi
-
       - name: Upload to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
@@ -69,5 +42,5 @@ jobs:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
           file: build/app/outputs/flutter-apk/app-development-profile.apk
-          releaseNotes: "${{ steps.get_changelog_diff.outputs.changelog }}"
+          releaseNotesFile: CHANGELOG.md
         
