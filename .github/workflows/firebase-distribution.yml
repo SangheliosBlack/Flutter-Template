@@ -35,12 +35,16 @@ jobs:
       - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
-      - name: Get Changelog Diff
-        id: get_changelog_diff
+      - name: Get changelog diff
         run: |
-          git diff HEAD^ HEAD -- CHANGELOG.md > changelog_diff.txt
+          # Verificar si hay al menos dos commits
+          if [ $(git rev-list --count HEAD) -gt 1 ]; then
+            git diff HEAD^ HEAD -- CHANGELOG.md > changelog_diff.txt
+          else
+            echo "No hay suficientes commits para comparar."
+            echo "" > changelog_diff.txt  # Crear un archivo vacío si no hay suficientes commits
+          fi
           echo "::set-output name=changelog::$(cat changelog_diff.txt)"
-
 
       - name: Upload to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
