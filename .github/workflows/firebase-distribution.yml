@@ -46,15 +46,20 @@ jobs:
       - name: Get latest changelog entry
         id: get_changelog_diff
         run: |
-          last_changelog=$(git log -1 --pretty=format:"%h - %s" -- CHANGELOG.md)
-
-          if [ -n "$last_changelog" ]; then
-            echo "Última entrada del changelog: $last_changelog"
-            echo "$last_changelog" > changelog.txt
-            echo "changelog=$last_changelog" >> $GITHUB_ENV  # Almacena en una variable de entorno
+          last_commit=$(git rev-parse HEAD)
+          previous_commit=$(git rev-parse HEAD~1)
+          
+          # Obtener las líneas que se han agregado al CHANGELOG.md en el último commit
+          added_lines=$(git diff --unified=0 "$previous_commit" "$last_commit" CHANGELOG.md | grep '^+[^+]' | sed 's/^+//')
+          
+          # Verificar si hay líneas nuevas y establecer la salida
+          if [ -n "$added_lines" ]; then
+              echo "Líneas nuevas en el changelog:"
+              echo "$added_lines"
+              echo "::set-output name=changelog::$(echo "$added_lines")"
           else
-            echo "No se encontró ninguna entrada en CHANGELOG.md."
-            echo "changelog=''" >> $GITHUB_ENV  # Salida vacía si no hay entradas
+              echo "No se han agregado nuevas líneas al changelog."
+              echo "::set-output name=changelog::''"  # Salida vacía si no hay nuevas líneas
           fi
 
       - name: Upload to Firebase App Distribution
