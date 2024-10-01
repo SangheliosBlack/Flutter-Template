@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=$(grep 'version:' pubspec.yaml | sed 's/version: //')
+version=$(grep 'version:' ../pubspec.yaml | sed 's/version: //')
 echo "Versión actual: $version"
 
 IFS='+' read -r semver build_number <<< "$version"
@@ -14,4 +14,4 @@ fi
 new_version="$semver+$build_number"
 echo "Nueva versión: $new_version"
 
-sed -i '' "s/version: .*/version: $new_version/" pubspec.yaml
+sed -i '' "s/version: .*/version: $new_version/" ../pubspec.yaml
