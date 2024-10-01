@@ -21,8 +21,18 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build the app
+      - name: Increment version number
+        run: ./scripts/increment_version.sh
+
+      - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
+
+      - name: Get Changelog Diff
+        id: get_changelog_diff
+        run: |
+          git diff HEAD^ HEAD -- CHANGELOG.md > changelog_diff.txt
+          echo "::set-output name=changelog::$(cat changelog_diff.txt)"
+
 
       - name: Upload to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
@@ -31,3 +41,5 @@ jobs:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
           file: build/app/outputs/flutter-apk/app-development-profile.apk
+          --release-notes "${{ steps.get_changelog_diff.outputs.changelog }}"
+        
