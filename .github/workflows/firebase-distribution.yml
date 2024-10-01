@@ -35,18 +35,17 @@ jobs:
       - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
-      - name: Get changelog diff
+      - name: Get changelog from last commit
         run: |
-          last_commit=$(git rev-parse HEAD~1)
+          last_changelog=$(git show HEAD:CHANGELOG.md)
 
-          git diff "$last_commit" HEAD -- CHANGELOG.md > changelog_diff.txt || echo "No hay cambios en CHANGELOG.md"
-
-          if [ -s changelog_diff.txt ]; then
-            echo "::set-output name=changelog::$(cat changelog_diff.txt)"
+          # Comprobar si el archivo tiene contenido
+          if [ -n "$last_changelog" ]; then
+            echo "$last_changelog" > changelog.txt
+            echo "::set-output name=changelog::$(cat changelog.txt)"
           else
-            echo "No hay cambios en CHANGELOG.md"
-            echo "" > changelog_diff.txt  # Crear un archivo vacío si no hay cambios
-            echo "::set-output name=changelog::''"  # Salida vacía si no hay cambios
+            echo "CHANGELOG.md está vacío."
+            echo "::set-output name=changelog::''"  # Salida vacía si el changelog está vacío
           fi
 
       - name: Upload to Firebase App Distribution

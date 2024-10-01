@@ -1,6 +1,9 @@
 ## Changelog
 
 ### [00003] -  [01/OCT/2024] - Julio Villagrana
+- Test Firebase3 App Distribution
+
+### [00003] -  [01/OCT/2024] - Julio Villagrana
 - Test Firebase2 App Distribution
 
 ### [00003] -  [01/OCT/2024] - Julio Villagrana
