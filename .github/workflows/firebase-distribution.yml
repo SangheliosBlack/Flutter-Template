@@ -41,5 +41,6 @@ jobs:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
           file: build/app/outputs/flutter-apk/app-development-profile.apk
-          --release-notes "${{ steps.get_changelog_diff.outputs.changelog }}"
+          releaseNotes: "${{ steps.get_changelog_diff.outputs.changelog }}"
+          releaseNotesFile: CHANGELOG.md
         
