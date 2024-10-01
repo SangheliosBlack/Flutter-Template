@@ -13,13 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Grant execute permission for increment_version.sh
-        run: chmod +x ./scripts/increment_version.sh
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -29,23 +22,32 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Increment version number
-        run: ./scripts/increment_version.sh
+      - name: Increment version
+        id: increment_version
+        run: |
+          version=$(grep 'version:' pubspec.yaml | sed 's/version: //')
+          IFS='+' read -r semver build_number <<< "$version"
+          build_number=$((build_number + 1))  # Incrementar el número de compilación
+          new_version="$semver+$build_number"
+          sed -i "s/version: .*/version: $new_version/" pubspec.yaml
+          echo "Nueva versión: $new_version"
+          echo "version=$new_version" >> $GITHUB_ENV  # Guardar la nueva versión en una variable de entorno
 
       - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
-      - name: Get changelog from last commit
+      - name: Get latest changelog entry
+        id: get_changelog_diff
         run: |
-          last_changelog=$(git show HEAD:CHANGELOG.md)
+          last_changelog=$(git log -1 --pretty=format:"%h - %s" -- CHANGELOG.md)
 
-          # Comprobar si el archivo tiene contenido
           if [ -n "$last_changelog" ]; then
+            echo "Última entrada del changelog: $last_changelog"
             echo "$last_changelog" > changelog.txt
-            echo "::set-output name=changelog::$(cat changelog.txt)"
+            echo "changelog=$last_changelog" >> $GITHUB_ENV  # Almacena en una variable de entorno
           else
-            echo "CHANGELOG.md está vacío."
-            echo "::set-output name=changelog::''"  # Salida vacía si el changelog está vacío
+            echo "No se encontró ninguna entrada en CHANGELOG.md."
+            echo "changelog=''" >> $GITHUB_ENV  # Salida vacía si no hay entradas
           fi
 
       - name: Upload to Firebase App Distribution
@@ -56,5 +58,4 @@ jobs:
           groups: testers
           file: build/app/outputs/flutter-apk/app-development-profile.apk
           releaseNotes: "${{ steps.get_changelog_diff.outputs.changelog }}"
-          releaseNotesFile: CHANGELOG.md
         
