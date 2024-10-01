@@ -37,14 +37,17 @@ jobs:
 
       - name: Get changelog diff
         run: |
-          # Verificar si hay al menos dos commits
-          if [ $(git rev-list --count HEAD) -gt 1 ]; then
-            git diff HEAD^ HEAD -- CHANGELOG.md > changelog_diff.txt
+          last_commit=$(git rev-parse HEAD~1)
+
+          git diff "$last_commit" HEAD -- CHANGELOG.md > changelog_diff.txt || echo "No hay cambios en CHANGELOG.md"
+
+          if [ -s changelog_diff.txt ]; then
+            echo "::set-output name=changelog::$(cat changelog_diff.txt)"
           else
-            echo "No hay suficientes commits para comparar."
-            echo "" > changelog_diff.txt  # Crear un archivo vacío si no hay suficientes commits
+            echo "No hay cambios en CHANGELOG.md"
+            echo "" > changelog_diff.txt  # Crear un archivo vacío si no hay cambios
+            echo "::set-output name=changelog::''"  # Salida vacía si no hay cambios
           fi
-          echo "::set-output name=changelog::$(cat changelog_diff.txt)"
 
       - name: Upload to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
