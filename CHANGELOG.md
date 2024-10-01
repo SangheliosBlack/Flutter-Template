@@ -1,5 +1,8 @@
 ## Changelog
 
+### [00005] -  [01/OCT/2024] - Julio Villagrana
+- Test Firebase5 App Distribution
+
 ### [00004] -  [01/OCT/2024] - Julio Villagrana
 - Test Firebase4 App Distribution
 
