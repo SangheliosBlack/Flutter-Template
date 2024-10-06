@@ -1,3 +1,11 @@
+buildscript {
+	apply from: "./plugin.gradle", to: buildscript
+
+	repositories {
+		mavenCentral()
+	}
+}
+
 allprojects {
     repositories {
         google()

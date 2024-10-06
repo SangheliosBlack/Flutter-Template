@@ -6,7 +6,7 @@ import 'package:flutter_template/views/views.dart';
 part 'app_routers.gr.dart';
 
 @AutoRouterConfig()
-class AppRouter extends _$AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         CustomRoute(

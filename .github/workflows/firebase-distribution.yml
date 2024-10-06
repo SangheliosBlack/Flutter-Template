@@ -3,7 +3,7 @@ name: Build and Distribute
 on:
   push:
     branches:
-      - development
+      - feature/refactor-template
 
 jobs:
   build:
@@ -21,13 +21,26 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build the app
+      - name: Increment version
+        id: increment_version
+        run: |
+          version=$(grep 'version:' pubspec.yaml | sed 's/version: //')
+          IFS='+' read -r semver build_number <<< "$version"
+          build_number=$((build_number + 1))  # Incrementar el número de compilación
+          new_version="$semver+$build_number"
+          sed -i "s/version: .*/version: $new_version/" pubspec.yaml
+          echo "Nueva versión: $new_version"
+          echo "version=$new_version" >> $GITHUB_ENV  # Guardar la nueva versión en una variable de entorno
+
+      - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
       - name: Upload to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.0.2
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: build/app/outputs/flutter-apk/app-release.apk
+          file: build/app/outputs/flutter-apk/app-development-profile.apk
+          releaseNotesFile: CHANGELOG.md
+        
