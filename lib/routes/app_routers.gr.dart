@@ -9,39 +9,6 @@
 
 part of 'app_routers.dart';
 
-abstract class _$AppRouter extends RootStackRouter {
-  // ignore: unused_element
-  _$AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, PageFactory> pagesMap = {
-    AuthRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const AuthPage(),
-      );
-    },
-    DashBoardDefaultRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const DashBoardDefaultPage(),
-      );
-    },
-    DashboardRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const DashboardPage(),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SplashPage(),
-      );
-    },
-  };
-}
-
 /// generated route for
 /// [AuthPage]
 class AuthRoute extends PageRouteInfo<void> {
@@ -53,7 +20,12 @@ class AuthRoute extends PageRouteInfo<void> {
 
   static const String name = 'AuthRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AuthPage();
+    },
+  );
 }
 
 /// generated route for
@@ -67,7 +39,12 @@ class DashBoardDefaultRoute extends PageRouteInfo<void> {
 
   static const String name = 'DashBoardDefaultRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DashBoardDefaultPage();
+    },
+  );
 }
 
 /// generated route for
@@ -81,7 +58,12 @@ class DashboardRoute extends PageRouteInfo<void> {
 
   static const String name = 'DashboardRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DashboardPage();
+    },
+  );
 }
 
 /// generated route for
@@ -95,5 +77,10 @@ class SplashRoute extends PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SplashPage();
+    },
+  );
 }
