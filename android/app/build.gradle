@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 def appName="FlutterTemplate"
 
 android {
-    namespace "com.flutter.template"
+    namespace "com.example.flutter.template"
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
@@ -49,7 +49,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.flutter.template"
+        applicationId "com.example.flutter.template"
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

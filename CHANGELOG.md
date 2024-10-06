@@ -1,23 +1,7 @@
 ## Changelog
 
-
-### [00006] -  [01/OCT/2024] - Julio Villagrana
-- Test Firebase6 App Distribution
-
-### [00005] -  [01/OCT/2024] - Julio Villagrana
-- Test Firebase5 App Distribution
-
-### [00004] -  [01/OCT/2024] - Julio Villagrana
-- Test Firebase4 App Distribution
-
-### [00003] -  [01/OCT/2024] - Julio Villagrana
-- Test Firebase3 App Distribution
-
-### [00003] -  [01/OCT/2024] - Julio Villagrana
-- Test Firebase2 App Distribution
-
-### [00003] -  [01/OCT/2024] - Julio Villagrana
-- Test Firebase2 App Distribution
+### [00004] -  [06/OCT/2024] - Julio Villagrana
+- Fixed package name both platforms
 
 ### [00003] -  [01/OCT/2024] - Julio Villagrana
 - Test Firebase App Distribution
