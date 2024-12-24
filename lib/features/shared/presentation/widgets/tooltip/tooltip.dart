@@ -1,0 +1,1 @@
+export 'adaptative_tooltip.dart';

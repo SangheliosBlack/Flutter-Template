@@ -1,0 +1,1 @@
+export 'splash_mobile_view.dart';
