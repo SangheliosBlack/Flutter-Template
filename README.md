@@ -41,8 +41,39 @@ Con un diseño extensible y modular, esta plantilla te ofrece la flexibilidad ne
 
 ## Requisitos Previos
 
-- Dart SDK y Flutter SDK instalados
-- Otros requisitos específicos...
+Antes de iniciar la aplicación, asegúrate de cumplir con los siguientes requisitos:
+
+  - **Dart SDK**: Asegúrate de tener el SDK de Dart instalado.
+  - **Flutter SDK**: Necesitas tener Flutter SDK instalado. Si no lo tienes, puedes seguir la [guía de instalación oficial de Flutter](https://flutter.dev/docs/get-started/install).
+  - **Xcode (opcional para iOS)**: Si deseas ejecutar la aplicación en un dispositivo iOS, necesitarás Xcode instalado en tu máquina macOS.
+  - **Android Studio**: Para ejecutar la aplicación en un dispositivo Android, asegúrate de tener Android Studio configurado.
+
+  ```bash
+  flutter pub get
+  ```
+
+## Validar Instalación con `flutter doctor`
+
+  Antes de comenzar, asegúrate de que tu entorno de desarrollo está correctamente configurado ejecutando el siguiente comando:
+
+  ```bash
+  flutter doctor
+  ```
+
+  Si todo está bien configurado, deberías ver un mensaje similar a este:
+
+  ```bash
+  Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.27.1, on macOS 15.2 24C101 darwin-arm64, locale es-ES)
+[✓] Android toolchain - develop for Android devices (Android SDK version 35.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 16.1)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2024.1)
+[✓] VS Code (version 1.96.1)
+[✓] Connected device (5 available)
+[✓] Network resources
+  ```
+
 
 ## Instalación
 
@@ -50,14 +81,12 @@ Con un diseño extensible y modular, esta plantilla te ofrece la flexibilidad ne
 
    ```bash
    git clone https://github.com/SangheliosBlack/Flutter-Template.git
-
    ```
 
 2. **Instala las dependencias :**
 
    ```bash
    flutter pub get
-
    ```
 
 3. **Configuracion de Variables de Entorno**
@@ -65,106 +94,94 @@ Con un diseño extensible y modular, esta plantilla te ofrece la flexibilidad ne
    - Crea un archivo .env en el directorio raíz.
    - Sigue el formato especificado env.example.
 
-4. **Inicia la aplicacion :**
-   ```bash
-   flutter run
-   ```
+## Iniciar la aplicación
+
+### Configuración de lanzamiento
+
+En el archivo `launch.json` se definen las configuraciones de lanzamiento para ejecutar la aplicación Flutter en diferentes entornos. Hay dos configuraciones disponibles:
+
+1. **Template Flutter (DEV)**: Para ejecutar la aplicación en modo desarrollo en dispositivos móviles.
+2. **Template Flutter Web (DEV)**: Para ejecutar la aplicación en un navegador web en modo desarrollo.
+
+### Para iniciar la aplicación:
+
+#### En dispositivos móviles (Flutter):
+Utiliza la configuración `"Template Flutter (DEV)"` que incluye los siguientes parámetros:
+- **`--dart-define-from-file=env/dev.json`**: Carga las variables de entorno definidas en el archivo `dev.json`.
+- **`--flavor Development`**: Establece el sabor de la aplicación como `Development` para configurar el entorno de desarrollo.
+
+Para iniciar la aplicación, puedes ejecutar desde VS Code o desde la terminal con el siguiente comando:
+
+```bash
+flutter run --dart-define-from-file=env/dev.json --flavor Development
+```
 
 ## Estructura del Proyecto
 
-El proyecto sigue una estructura organizada para facilitar la comprensión y mantenimiento del código. A continuación, se detalla la estructura del proyecto:
+La estructura sigue los principios de **Clean Architecture** para mantener las responsabilidades bien definidas en cada capa. A continuación se describe la organización del proyecto:
 
-- **/lib:** Contiene el código fuente de la aplicación Flutter.
-  - `/blocs`: Lógica de negocio y gestión del estado utilizando BLoC.
-  - `/helpers`: Funciones y utilidades auxiliares.
-  - `/routes`: Configuración de las rutas de la aplicación.
-  - `/services`: Lógica de servicios y comunicación con API.
-  - `/themes`: Configuración de temas y estilos.
-  - `/utils`: Utilidades generales.
+```plaintext
+/lib
+  ├── core
+  │   ├── error
+  │   ├── usecases
+  │   └── utils
+  ├── features
+  │   ├── auth
+  │   │   ├── data
+  │   │   │   ├── datasources
+  │   │   │   ├── models
+  │   │   │   └── repositories
+  │   │   ├── domain
+  │   │   │   ├── entities
+  │   │   │   ├── repositories
+  │   │   │   └── usecases
+  │   │   ├── presentation
+  │   │   │   ├── pages
+  │   │   │   └── blocs
+  │   │   └── auth.dart
+  │   ├── home
+  │   ├── payment
+  │   └── user
+  ├── main.dart
+  ├── routes.dart
+  └── themes.dart
+```
 
-## Configuración
+## Generación Automática de Código con `build_runner` en Riverpod
 
-Instrucciones sobre cómo configurar el servidor, incluyendo variables de entorno y otros ajustes necesarios.
+### ¿Qué es `build_runner`?
+
+`build_runner` es una herramienta en Flutter/Dart que permite generar automáticamente código, lo que simplifica tareas repetitivas como la creación de providers y otros artefactos. En el contexto de Riverpod, `build_runner` se utiliza para generar los archivos relacionados con los providers usando el generador de código de Riverpod.
+
+### ¿Cómo se usa `build_runner` con Riverpod?
+
+Para usar el generador de código de Riverpod y generar providers automáticamente, sigue estos pasos:
+
+1. **Añadir dependencias a `pubspec.yaml` (Ya esta añadido)**
+
+   Primero, necesitas agregar las dependencias necesarias en tu archivo `pubspec.yaml`:
+
+   ```yaml
+   dev_dependencies:
+    flutter_riverpod_generator: ^2.0.0  # Dependencia del generador de Riverpod
+     build_runner: ^2.0.0  # Herramienta para generar el código
+    ```
+2. **Ejecutar el comando de generación de código**
+
+   Una vez que hayas añadido las dependencias, ejecuta el siguiente comando en tu terminal para generar el código automáticamente:
+
+
+   ```bash
+   
+   flutter pub run build_runner build
+   ```
+  
+   Este comando buscará los archivos que tienen las anotaciones correspondientes (como @riverpod en los providers) y generará el código necesario en archivos .g.dart. Estos archivos contienen la implementación de los providers y otros artefactos generados.
 
 ## Uso
 
 Detalles sobre cómo usar el servidor, ejemplos de llamadas a la API, y cualquier otra información relevante.
-
-## Pruebas Unitarias
-
-En el directorio `test`, encontrarás las siguientes pruebas unitarias:
-
-| Archivo                         |
-| ------------------------------- |
-| test                            |
-| ├── business_logic_test.dart    |
-| ├── utility_functions_test.dart |
-| ├── external_services_test.dart |
-| ├── state_management_test.dart  |
-| ├── ui_widgets_test.dart        |
-| ├── navigation_test.dart        |
-| ├── error_handling_test.dart    |
-| ├── performance_test.dart       |
-| ├── data_persistence_test.dart  |
-| └── ui_update_test.dart         |
-
-# Características
-
-El proyecto cuenta con las siguientes características, gracias a las dependencias utilizadas:
-
-- **[flutter_launcher_icons (^0.13.1)](https://pub.dev/packages/flutter_launcher_icons):** Permite personalizar los íconos de la aplicación para las plataformas Android e iOS.
-
-- **[liquid_pull_to_refresh (^3.0.1)](https://pub.dev/packages/liquid_pull_to_refresh):** Proporciona un widget de arrastre para actualizar similar a un líquido.
-
-- **[expandable_page_view (^1.0.17)](https://pub.dev/packages/expandable_page_view):** Ofrece una vista de página que se puede expandir para proporcionar una experiencia de usuario más dinámica.
-
-- **[curved_navigation_bar (^1.0.3)](https://pub.dev/packages/curved_navigation_bar):** Implementa una barra de navegación inferior curvada para una navegación más atractiva.
-
-- **[font_awesome_flutter (^10.5.0)](https://pub.dev/packages/font_awesome_flutter):** Ofrece acceso a la biblioteca de iconos Font Awesome en Flutter.
-
-- **[shared_preferences (^2.2.0)](https://pub.dev/packages/shared_preferences):** Facilita el almacenamiento persistente de pequeñas cantidades de datos clave-valor en la aplicación.
-
-- **[flutter_stripe (^9.5.0+1)](https://pub.dev/packages/flutter_stripe):** Permite la integración de pagos con la plataforma de Stripe.
-
-- **[flutter_dotenv (^5.1.0)](https://pub.dev/packages/flutter_dotenv):** Carga variables de entorno desde un archivo `.env` para la configuración de la aplicación.
-
-- **[fluttertoast (^8.2.2)](https://pub.dev/packages/fluttertoast):** Proporciona notificaciones Toast en la aplicación.
-
-- **[flutter_bloc (^8.1.3)](https://pub.dev/packages/flutter_bloc):** Implementa el patrón de estado BLoC para gestionar el estado de la aplicación de manera eficiente.
-
-- **[google_fonts (^5.1.0)](https://pub.dev/packages/google_fonts):** Permite el uso de fuentes personalizadas de Google Fonts en la aplicación.
-
-- **[flutter_svg (^2.0.7)](https://pub.dev/packages/flutter_svg):** Facilita la renderización de imágenes SVG en Flutter.
-
-- **[local_auth (^2.1.7)](https://pub.dev/packages/local_auth):** Brinda soporte para la autenticación biométrica y de huellas dactilares.
-
-- **[auto_route (^7.8.0)](https://pub.dev/packages/auto_route):** Simplifica la configuración de rutas de navegación en Flutter.
-
-- **[animate_do (^3.1.2)](https://pub.dev/packages/animate_do):** Proporciona animaciones atractivas para los elementos de la interfaz de usuario.
-
-- **[ansicolor (^2.0.2)](https://pub.dev/packages/ansicolor):** Permite la colorización de la salida en la consola para una mejor legibilidad de los logs.
-
-- **[equatable (^2.0.5)](https://pub.dev/packages/equatable):** Facilita la comparación y copia de objetos de manera eficiente.
-
-- **[hidable (^1.0.5)](https://pub.dev/packages/hidable):** Permite ocultar y mostrar elementos de la interfaz de usuario de manera dinámica.
-
-- **[logging (^1.2.0)](https://pub.dev/packages/logging):** Proporciona una infraestructura de registro para la aplicación.
-
-- **[get_it (^7.6.0)](https://pub.dev/packages/get_it):** Un contenedor de servicios para la inyección de dependencias.
-
-- **[http (^1.1.0)](https://pub.dev/packages/http):** Proporciona funcionalidades HTTP para realizar solicitudes y recibir respuestas.
-
-- **[mockito (^5.0.15)](https://pub.dev/packages/mockito):** Permite la creación de objetos de imitación para realizar pruebas de manera controlada.
-
-# Dependencias de Desarrollo
-
-- **[auto_route_generator (^7.2.0)](https://pub.dev/packages/auto_route_generator):** Genera código para la navegación declarativa.
-
-- **[flutter_lints (^2.0.0)](https://pub.dev/packages/flutter_lints):** Conjunto de reglas y configuraciones de linter para proyectos Flutter.
-
-- **[build_runner (^2.4.5)](https://pub.dev/packages/build_runner):** Automatiza la generación de código en tiempo de compilación.
-
-- **[flutter_test](https://pub.dev/packages/flutter_test):** Proporciona herramientas para escribir y ejecutar pruebas en proyectos Flutter.
 
 # Contribución
 
