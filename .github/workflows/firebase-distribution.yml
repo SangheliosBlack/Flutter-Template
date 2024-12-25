@@ -23,7 +23,7 @@ jobs:
 
       - name: Set up Flutter
         run: |
-          if [ ! -d "~/flutter" ]; then
+          if [ ! -d "$HOME/flutter/bin" ]; then
             echo "Flutter not found, cloning Flutter..."
             git clone https://github.com/flutter/flutter.git ~/flutter
           else
