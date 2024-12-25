@@ -25,8 +25,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           git clone https://github.com/flutter/flutter.git ~/flutter
-          echo "::add-path::~/flutter/bin"
-          flutter --version
+          echo "FLUTTER_HOME=~/flutter" >> $GITHUB_ENV
+          echo "$HOME/flutter/bin" >> $GITHUB_PATH
+
+      - name: Verify Flutter Setup
+        run: flutter --version
         
       - name: Get latest app version
         id: version
