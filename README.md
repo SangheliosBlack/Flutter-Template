@@ -18,6 +18,9 @@ Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones 
 ![Mockito](https://img.shields.io/badge/Mockito-DBDFFF?style=for-the-badge&logo=Dart&logoColor=black)
 ![Realm](https://img.shields.io/badge/Realm-3948BB?style=for-the-badge&logo=Realm&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=Microsoft-Azure&logoColor=white)
+![Riverpod](https://img.shields.io/badge/Riverpod-0D5C63?style=for-the-badge&logo=Riverpod&logoColor=white)
+![Dynatrace](https://img.shields.io/badge/Dynatrace-1E3A8A?style=for-the-badge&logo=Dynatrace&logoColor=white)
+
 
 
 
@@ -30,10 +33,6 @@ Esta aplicación Flutter es una plataforma robusta y escalable diseñada para ac
 - [Requisitos Previos](#requisitos-previos)
 - [Instalación](#instalación)
 - [Estructura del Proyecto](#estructura-del-proyecto)
-- [Configuración](#configuración)
-- [Uso](#uso)
-- [Pruebas unitarias](#pruebas-unitarias)
-- [Características](#características)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 
