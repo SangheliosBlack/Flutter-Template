@@ -9,23 +9,21 @@
 
 # Flutter Template
 
-Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones sorprendentes con Flutter. Esta plantilla está diseñada para proporcionar una estructura organizada y eficiente para el desarrollo de aplicaciones móviles, permitiéndote centrarte en la creación de características innovadoras y una experiencia de usuario excepcional.
+Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones con Flutter. Esta plantilla está diseñada para proporcionar una estructura organizada y eficiente para el desarrollo de aplicaciones móviles, permitiéndote centrarte en la creación de características innovadoras y una experiencia de usuario de alta calidad.
 
-![Version](https://img.shields.io/badge/Version-1.0.0-00d679?style=for-the-badge&logo=V)
 ![Stripe](https://img.shields.io/badge/Stripe-7455E8?style=for-the-badge&logo=Stripe&logoColor=white)
 ![Socket.io](https://img.shields.io/badge/Socket.io-000000?style=for-the-badge&logo=Socket.io&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-4887E7?style=for-the-badge&logo=Firebase&logoColor=F4D208)
 ![Gitlab](https://img.shields.io/badge/Gitlab-FFFFFF?style=for-the-badge&logo=Gitlab&logoColor=#D74A2C)
 ![Mockito](https://img.shields.io/badge/Mockito-DBDFFF?style=for-the-badge&logo=Dart&logoColor=black)
-![Flutter Launcher Icons](https://img.shields.io/badge/Flutter_Launcher_Icons-^0.13.1-00d679?style=for-the-badge&logo=Flutter)
-![Liquid Pull to Refresh](https://img.shields.io/badge/Liquid_Pull_to_Refresh-^3.0.1-00d679?style=for-the-badge&logo=Flutter)
-![Expandable Page View](https://img.shields.io/badge/Expandable_Page_View-^1.0.17-00d679?style=for-the-badge&logo=Flutter)
+![Flutter Launcher Icons](https://img.shields.io/badge/Flutter_Launcher_Icons-00d679?style=for-the-badge&logo=Flutter)
+![Liquid Pull to Refresh](https://img.shields.io/badge/Liquid_Pull_to_Refresh-00d679?style=for-the-badge&logo=Flutter)
+![Expandable Page View](https://img.shields.io/badge/Expandable_Page_View-00d679?style=for-the-badge&logo=Flutter)
+
 
 ## Descripción
 
-Esta aplicación Flutter es mucho más que un simple punto de partida. Es un ecosistema completo que combina las mejores prácticas de desarrollo, herramientas de vanguardia y una selección de dependencias poderosas para acelerar tu proceso de desarrollo.
-
-Con un diseño extensible y modular, esta plantilla te ofrece la flexibilidad necesaria para adaptarse a cualquier tipo de proyecto. Ya sea que estés construyendo una aplicación de comercio electrónico, una aplicación de productividad o una innovadora aplicación de medios, esta plantilla proporciona una base sólida que puedes personalizar y ampliar según tus necesidades específicas.
+Esta aplicación Flutter es una plataforma robusta y escalable diseñada para acelerar el desarrollo de aplicaciones modernas. Con un diseño modular y extensible, es adecuada para diversos proyectos como comercio electrónico, productividad o medios. La plantilla ofrece una base sólida con mejores prácticas, herramientas avanzadas y dependencias poderosas como Riverpod para gestión de estado y configuraciones optimizadas para APIs y servicios HTTP. Además, soporta autenticación segura, notificaciones push, testing automatizado, y facilita la integración de CI/CD. Ideal tanto para desarrolladores individuales como equipos, esta plantilla proporciona la infraestructura necesaria para crear aplicaciones escalables y adaptables.
 
 ## Tabla de Contenidos
 
@@ -178,10 +176,6 @@ Para usar el generador de código de Riverpod y generar providers automáticamen
    ```
   
    Este comando buscará los archivos que tienen las anotaciones correspondientes (como @riverpod en los providers) y generará el código necesario en archivos .g.dart. Estos archivos contienen la implementación de los providers y otros artefactos generados.
-
-## Uso
-
-Detalles sobre cómo usar el servidor, ejemplos de llamadas a la API, y cualquier otra información relevante.
 
 # Contribución
 
