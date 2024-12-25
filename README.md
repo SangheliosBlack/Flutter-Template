@@ -45,10 +45,6 @@ Antes de iniciar la aplicación, asegúrate de cumplir con los siguientes requis
   - **Xcode (opcional para iOS)**: Si deseas ejecutar la aplicación en un dispositivo iOS, necesitarás Xcode instalado en tu máquina macOS.
   - **Android Studio**: Para ejecutar la aplicación en un dispositivo Android, asegúrate de tener Android Studio configurado.
 
-  ```bash
-  flutter pub get
-  ```
-
 ## Validar Instalación con `flutter doctor`
 
   Antes de comenzar, asegúrate de que tu entorno de desarrollo está correctamente configurado ejecutando el siguiente comando:
