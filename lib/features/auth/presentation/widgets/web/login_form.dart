@@ -35,10 +35,10 @@ class LoginForm extends ConsumerWidget {
               children: [
                 Text(
                   "Correo electronico",
-                  style: GoogleFonts.quicksand(
+                  style: GoogleFonts.poppins(
                     color: Colors.grey,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300
                   )
                 ),
                 UsernameFieldWidget(
@@ -47,10 +47,10 @@ class LoginForm extends ConsumerWidget {
                   focus: focusNode,
                 ),
                 Text("Contraseña",
-                  style: GoogleFonts.quicksand(
+                  style: GoogleFonts.poppins(
                     color: Colors.grey,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300
                   )
                 ),
                 PassFieldWidget(
@@ -76,8 +76,9 @@ class LoginForm extends ConsumerWidget {
                     alignment: Alignment.centerRight,
                     child: Text(
                       "Olvidaste tu contraseña?",
-                      style: GoogleFonts.quicksand(
-                        color: Colors.grey
+                      style: GoogleFonts.poppins(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w300
                       ),
                     ),
                   ),

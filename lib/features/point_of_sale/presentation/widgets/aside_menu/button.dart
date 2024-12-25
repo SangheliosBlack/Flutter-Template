@@ -5,20 +5,20 @@ class AsideButton extends StatelessWidget {
 
   final IconData icon;
   final bool active;
+  final Function()? onTap;
 
   const AsideButton({
     super.key, 
     required this.icon,
-    required this.active
+    required this.active,
+    this.onTap
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onTap: (){
-
-      },
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(
           vertical: 12,

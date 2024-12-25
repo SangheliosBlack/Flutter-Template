@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/core/resources/data_state.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_provider.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
+import 'package:flutter_template/core/services/navigation_service/navigation_service.dart';
 import 'package:flutter_template/features/auth/application/providers/auth_state.dart';
 import 'package:flutter_template/features/auth/domain/params/login_params.dart';
+import 'package:flutter_template/features/auth/presentation/screen/presentation_screen.dart';
+import 'package:flutter_template/features/point_of_sale/presentation/screens/point_of_sale_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'login_user_provider.dart';
@@ -41,8 +44,6 @@ class AuthController extends _$AuthController{
 
     loadingState();
 
-    await Future.delayed(Duration(milliseconds: 800));
-
     final params = LoginParams(email: state.email, password: state.password);
 
     final useCase = await ref.read(loginUseCaseProvider).call(params: params);
@@ -50,13 +51,13 @@ class AuthController extends _$AuthController{
     if(useCase is DataSuccess){
 
       state = state.copyWith(
-        email: "",
-        password: "",
         user: useCase.data,
         isLoading: false,
         authenticationStatus: AuthenticationStatus.authenticated
         
       );
+
+      _authenticationNavigate();
 
     }else{
 
@@ -96,6 +97,41 @@ class AuthController extends _$AuthController{
     state = state.copyWith(
       authenticationStatus : isAuthenticated
     );
+
+  }
+
+  Future<void> logout() async{
+
+    await ref.read(authenticationServiceNotifierProvider.notifier).logout();
+
+    state.emailController?.clear();
+    state.passwordController?.clear();
+
+
+    state = state.copyWith(
+      authenticationStatus: AuthenticationStatus.notAuthenticated
+    );
+
+    _authenticationNavigate();
+
+  }
+
+  Future<void> _authenticationNavigate() async{
+
+    final navigate = ref.read(navigationProvider);
+
+    if (state.authenticationStatus == AuthenticationStatus.authenticated) {
+
+      navigate(PointOfSaleScreen.path);
+
+    } else if (state.authenticationStatus == AuthenticationStatus.notAuthenticated) {
+
+      navigate(PresentationScreen.path);
+
+    }
+
+
+    return;
 
   }
 

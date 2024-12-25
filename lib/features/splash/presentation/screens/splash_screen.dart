@@ -20,8 +20,8 @@ class SplashScreen extends ConsumerWidget {
 
       if(next.authenticationStatus == AuthenticationStatus.authenticated){
 
-        //context.go(PointOfSaleScreen.path);
-        context.go(HiScreen.path);
+        context.go(PointOfSaleScreen.path);
+        //context.go(HiScreen.path);
 
       }
 

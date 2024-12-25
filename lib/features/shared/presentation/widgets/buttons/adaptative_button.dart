@@ -66,7 +66,7 @@ class AdaptativeButton extends StatelessWidget {
                                   )
                                 : Text(
                                     labelText,
-                                    style: GoogleFonts.quicksand(
+                                    style: GoogleFonts.poppins(
                                       color: Colors.white,
                                       fontSize: 15,
                                     )

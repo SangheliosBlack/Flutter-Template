@@ -33,7 +33,7 @@ class LoginScreen extends ConsumerWidget {
             children: [
               ResponsiveBuilder(builder: (BuildContext context, SizingInformation sizingInformation) {
                 return Container(
-                  width: sizingInformation.isDesktop ? context.width * .5 >= 500 ? 500 : context.width * .5 : context.width,
+                  width: sizingInformation.isDesktop || sizingInformation.isTablet ? context.width * .5 >= 500 ? 500 : context.width * .5 : context.width,
                   padding: EdgeInsets.symmetric(
                   horizontal: sizingInformation.isMobile ? 30 : 0),
                   height: context.height,

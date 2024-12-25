@@ -26,7 +26,11 @@ class _UsernameFieldWidgetState extends State<UsernameFieldWidget> {
     return TextFormField(
       autofocus: false,
       autofillHints: const [AutofillHints.email],
-      style: GoogleFonts.quicksand(color: Colors.black, fontSize: 16),
+      style: GoogleFonts.poppins(
+        color: Colors.black, 
+        fontSize: 16,
+        fontWeight: FontWeight.w300
+      ),
       controller: widget.controller,
       maxLines: 1,
       onFieldSubmitted: (v) {
@@ -35,7 +39,7 @@ class _UsernameFieldWidgetState extends State<UsernameFieldWidget> {
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       validator: _validator,
-      onChanged: (text) {},
+            onChanged: (text) {},
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
           vertical: 15, horizontal: 17

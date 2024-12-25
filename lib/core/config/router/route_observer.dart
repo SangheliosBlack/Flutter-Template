@@ -47,6 +47,6 @@ class GoRouterObserver extends NavigatorObserver {
 
   @override
   void didRemove(Route route, Route? previousRoute) {
-    _updateCurrentRoute(previousRoute);
+    _updateCurrentRoute(previousRoute ?? route);
   }
 }

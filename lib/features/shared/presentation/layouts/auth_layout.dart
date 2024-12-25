@@ -13,12 +13,17 @@ class AuthLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(child: child),
-          Footer()
-        ],
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Scaffold(
+          body: Column(
+            children: [
+              Expanded(child: child),
+              Footer()
+            ],
+          ),
+        ),
       ),
     );
 

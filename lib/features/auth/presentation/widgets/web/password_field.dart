@@ -37,7 +37,11 @@ class _PassFieldWidget extends State<PassFieldWidget> {
       textCapitalization: TextCapitalization.words,
       //focusNode: widget.focus,
       autofillHints: const [AutofillHints.password],
-      style: GoogleFonts.quicksand(color: Colors.black, fontSize: 16),
+      style: GoogleFonts.poppins(
+        color: Colors.black, 
+        fontSize: 16,
+        fontWeight: FontWeight.w300
+      ),
       controller: widget.controller,
       obscureText: _obscureText,
       maxLines: 1,
@@ -55,24 +59,22 @@ class _PassFieldWidget extends State<PassFieldWidget> {
       },
       validator: _validator,
       decoration: InputDecoration(
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          hintText: UiConstants.passwordPlaceholder,
-          suffixIcon: widget.obscureText
-              ? Container(
-                  padding: EdgeInsets.only(right: 20),
+        contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        hintText: UiConstants.passwordPlaceholder,
+        suffixIcon: widget.obscureText
+          ? Container(
+              padding: EdgeInsets.only(right: 20),
                 child: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                    icon: Icon(
-                        _obscureText ? Icons.visibility : Icons.visibility_off),
-                  ),
-              )
-              : Container()),
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                  icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+                ),
+          )
+          : Container()),
     );
   }
 

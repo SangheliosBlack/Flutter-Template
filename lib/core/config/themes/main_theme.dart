@@ -54,6 +54,10 @@ class AppTheme {
         borderRadius: BorderRadius.circular(50),
         borderSide: BorderSide(color: error,width: 2),
       ), 
+      hintStyle: GoogleFonts.poppins(
+        color: Colors.black,
+        fontWeight: FontWeight.w300
+      ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(50),
         borderSide: BorderSide(color: error,width: 2),
@@ -72,7 +76,6 @@ class AppTheme {
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 27, vertical: 17),
       errorStyle: GoogleFonts.quicksand(color: error),
-      hintStyle: GoogleFonts.quicksand(color: Colors.black.withValues(alpha: .7)),
       labelStyle: GoogleFonts.quicksand(color: AppTheme.primary, fontSize: 17),
       hoverColor: Colors.grey.withValues(alpha: .05)
     ),
