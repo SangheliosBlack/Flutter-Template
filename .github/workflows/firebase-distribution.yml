@@ -45,6 +45,15 @@ jobs:
 
 #     - name: Check updated pubspec.yaml
 #       run: cat pubspec.yaml
+      
+      - name: Increment build number
+        run: |
+          current_version=$(grep '^version:' pubspec.yaml | awk '{print $2}')
+          version_name=$(echo $current_version | cut -d'+' -f1)
+          current_build=$(echo $current_version | cut -d'+' -f2)
+          new_build=$((current_build + 1))
+          sed -i "s/^version:.*/version: $version_name+$new_build/" pubspec.yaml
+          echo "New version: $version_name+$new_build"
 
       - name: Install dependencies
         run: flutter pub get

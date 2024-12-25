@@ -4,7 +4,7 @@ description: Template for developing an application in Flutter.
 
 publish_to: "none"
 
-version: 0.1.0
+version: 0.1.0+1
 
 environment:
   sdk: ">=3.1.0 <4.0.0"
