@@ -22,9 +22,13 @@ jobs:
             flutter-${{ runner.os }}-
 
       - name: Set up Flutter
-        if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          git clone https://github.com/flutter/flutter.git ~/flutter
+          if [ ! -d "~/flutter" ]; then
+            echo "Flutter not found, cloning Flutter..."
+            git clone https://github.com/flutter/flutter.git ~/flutter
+          else
+            echo "Flutter already installed, using existing installation."
+          fi
           echo "FLUTTER_HOME=~/flutter" >> $GITHUB_ENV
           echo "$HOME/flutter/bin" >> $GITHUB_PATH
 
