@@ -167,7 +167,7 @@ Para usar el generador de código de Riverpod y generar providers automáticamen
 
    ```bash
    
-   flutter pub run build_runner build
+   dart run build_runner build
    ```
   
    Este comando buscará los archivos que tienen las anotaciones correspondientes (como @riverpod en los providers) y generará el código necesario en archivos .g.dart. Estos archivos contienen la implementación de los providers y otros artefactos generados.
