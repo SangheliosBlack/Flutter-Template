@@ -82,10 +82,20 @@ Antes de iniciar la aplicación, asegúrate de cumplir con los siguientes requis
    flutter pub get
    ```
 
-3. **Configuracion de Variables de Entorno**
+### 3. **Configuración de Variables de Entorno**
 
-   - Crea un archivo .env en el directorio raíz.
-   - Sigue el formato especificado env.example.
+Dentro de la carpeta `env` en el directorio raíz, deberás crear un archivo llamado `dev.json`. Este archivo debe seguir el siguiente formato de ejemplo:
+
+
+```json
+{
+  "PATH_URL": "PATH_URL": "https://ejemplo.com/api",
+  "PORT": "",          //Solo para conexión local
+  "ENVIRONMENT": "np", //No productivo - np | Productivo - p 
+  "API_VERSION": "v1"
+}
+```
+Puedes basarte en el archivo dev_example.json proporcionado para crear tu archivo dev.json, ajustando las variables de acuerdo con tu configuración.
 
 ## Iniciar la aplicación
 
