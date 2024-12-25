@@ -1,8 +1,7 @@
-import 'package:flutter_template/services/http_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-class MockHttpService extends Mock implements HttpService {}
+class MockHttpService extends Mock {}
 
 void main() {
   test('Ejemplo de prueba unitaria con Mock', () {

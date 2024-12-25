@@ -3,7 +3,7 @@ name: Build and Distribute
 on:
   push:
     branches:
-      - development
+      - feature/refactor-template
 
 jobs:
   build:
@@ -13,21 +13,64 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+      - name: Cache Flutter
+        uses: actions/cache@v3
         with:
-          flutter-version: '3.24.3'
+          path: ~/flutter
+          key: flutter-${{ runner.os }}-3.27.1
+          restore-keys: |
+            flutter-${{ runner.os }}-
+
+      - name: Set up Flutter
+        run: |
+          if [ ! -d "$HOME/flutter/bin" ]; then
+            echo "Flutter not found, cloning Flutter..."
+            git clone https://github.com/flutter/flutter.git ~/flutter
+          else
+            echo "Flutter already installed, using existing installation."
+          fi
+          echo "FLUTTER_HOME=~/flutter" >> $GITHUB_ENV
+          echo "$HOME/flutter/bin" >> $GITHUB_PATH
+
+      - name: Verify Flutter Setup
+        run: flutter --version
+        
+      - name: Get latest app version
+        id: version
+        uses: MakeAndDevelop/firebase-appversion@v2
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          projectNumber: ${{secrets.FIREBASE_PROJECT_NUMBER}}
+          serviceAccount: ${{secrets.FIREBASE_SERVICE_ACCOUNT}}
+
+#     - name: Update version in YAML
+#       run: | 
+#         sed -i 's/^version: .*/version: ${{ steps.version.outputs.newFlutterVersionString }}/' pubspec.yaml
+
+#     - name: Check updated pubspec.yaml
+#       run: cat pubspec.yaml
+      
+      - name: Increment build number
+        run: |
+          current_version=$(grep '^version:' pubspec.yaml | awk '{print $2}')
+          version_name=$(echo $current_version | cut -d'+' -f1)
+          current_build=$(echo $current_version | cut -d'+' -f2)
+          new_build=$((current_build + 1))
+          sed -i "s/^version:.*/version: $version_name+$new_build/" pubspec.yaml
+          echo "New version: $version_name+$new_build"
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build the app
+      - name: Build APK
         run: flutter build apk --flavor development --profile --dart-define-from-file=env/dev.json  
 
       - name: Upload to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.0.2
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: build/app/outputs/flutter-apk/app-release.apk
+          file: build/app/outputs/flutter-apk/app-development-profile.apk
+          releaseNotesFile: CHANGELOG.md
+        

@@ -1,81 +1,58 @@
-import 'package:ansicolor/ansicolor.dart'; 
+import 'dart:io';
+
+import 'package:background_fetch/background_fetch.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart'; 
 import 'package:flutter/services.dart'; 
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:logging/logging.dart'; 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:flutter_template/blocs/auth_bloc/auth_bloc.dart';
-import 'package:flutter_template/helpers/colorized.dart'; 
-import 'package:flutter_template/routes/app_routers.dart'; 
-import 'package:flutter_template/services/local_storage.dart';
-import 'package:flutter_template/themes/main_theme.dart'; 
-import 'injection_container.dart' as di;
+import 'package:flutter_template/core/config/themes/main_theme.dart';
+import 'package:flutter_template/core/services/background_fetch/background_fetch_service.dart';
+import 'package:flutter_web_plugins/url_strategy.dart'; 
+import 'core/config/router/app_router.dart';
 
 void main() async {
   
-  Logger.root.level = Level.ALL;
-  Logger.root.onRecord.listen((record) {
-
-    debugPrint(colorize(
-        '${record.level.name}: ${record.time}: ${record.message}: ${record.loggerName}',
-        AnsiPen()..green));
-  });
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  //await Stripe.instance.applySettings();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown, DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
 
-  await LocalStorage.configurePrefs();
-  await di.initLocator();
+  usePathUrlStrategy();
 
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(ProviderScope(child: MainApp()));
 
-  runApp(AppState());
+  if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+
+    BackgroundFetch.registerHeadlessTask(BackgroundFetchService.backgroundFetchHeadlessTask);
+    
+  }
+
   
 }
+class MainApp extends ConsumerWidget {
 
-class AppState extends StatelessWidget {
-
-  AppState({super.key});
-
-  final appRouter = AppRouter();
+  const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
 
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => di.sl<AuthBloc>()..add(IsLoggedIn()),
-        ),
-      ],
-      child: MyApp(
-        appRouter: appRouter,
-      ),
-    );
-  }
-}
+    final appRouter = ref.watch(appRouterProvider);
 
-class MyApp extends StatelessWidget {
-
-  final AppRouter appRouter;
-  const MyApp({super.key, required this.appRouter});
-
-  @override
-  Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Template',
-      theme: Themes.appTheme,
+      theme: AppTheme.appTheme,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate
       ],
       supportedLocales: const [Locale('es')],
-      routerConfig: appRouter.config(),
+      routerConfig: appRouter
     );
+    
   }
 
 }

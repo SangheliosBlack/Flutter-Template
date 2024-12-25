@@ -1,0 +1,8 @@
+export 'aside_menu/aside_menu.dart';
+export 'body/body.dart';
+export 'account_menu/account_menu.dart';
+export 'delivery_type/delivery_type.dart';
+export 'cart/cart.dart';
+export 'total_description/total_description.dart';
+export 'header_search_bar/header_search_bar.dart';
+export 'products/products.dart';
