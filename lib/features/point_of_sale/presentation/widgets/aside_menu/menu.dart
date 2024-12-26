@@ -20,6 +20,7 @@ class AsideMenu extends ConsumerWidget {
       ),
       child: Column(
         children: [
+          Gap(20),
           FlutterLogo(
             size: 40, 
             style: FlutterLogoStyle.markOnly, 

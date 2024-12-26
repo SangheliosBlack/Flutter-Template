@@ -13,13 +13,13 @@ class AccountMenu extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
+      width: 290,
+      margin: EdgeInsets.only(
+        top: 20
+      ),
       padding: EdgeInsets.symmetric(
         vertical: 15,
         horizontal: 15
-      ),
-      constraints: BoxConstraints(
-        maxWidth: 290,
-        minWidth: 290
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,

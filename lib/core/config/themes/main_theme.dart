@@ -58,6 +58,10 @@ class AppTheme {
         color: Colors.black,
         fontWeight: FontWeight.w300
       ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0),width: 1)
+      ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(50),
         borderSide: BorderSide(color: error,width: 2),

@@ -1,5 +1,8 @@
 ## Changelog
 
+### [00006] -  [25/DIC/2024] - Julio Villagrana
+- Add Point of Sale template UI and routes
+
 ### [00005] -  [23/DIC/2024] - Julio Villagrana
 - Refactor to Clean Architecture
 - Change state manager from BLoC to Riverpod notation

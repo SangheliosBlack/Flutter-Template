@@ -12,6 +12,7 @@ class CategoryList extends StatelessWidget {
     return SizedBox(
       height: 100,
       child: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20),
         scrollDirection: Axis.horizontal,
         
         shrinkWrap: true,

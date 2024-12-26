@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/core/config/router/app_router_notifier.dart';
 import 'package:flutter_template/core/config/router/route_observer.dart';
-import 'package:flutter_template/core/config/router/routes/auth_routes.dart';
+import 'package:flutter_template/core/config/router/routes/routes.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
 import 'package:flutter_template/core/utils/logs/logger.dart';
 import 'package:flutter_template/core/utils/transitions/custom_transitions.dart';
@@ -61,19 +61,7 @@ GoRouter appRouter(ref) {
           );
         },
       ),
-      GoRoute(
-        path: PointOfSaleScreen.path,
-        name: PointOfSaleScreen.path,
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (_,__) => PointOfSaleScreen(),
-        pageBuilder: (context, state) {
-          return PageTransitions.buildPageWithFadeInFromCenter(
-            state: state,
-            context: context,
-            child: const PointOfSaleScreen()
-          );
-        },
-      ),
+      PointOfSaleNavigator.routes,
       AuthNavigator.routes
     ],
     redirect: (context,state){

@@ -25,12 +25,16 @@ class SearchBar extends StatelessWidget {
               child: TextFormField(
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(0),
-                  hintText: "Buscar..."
+                  hintText: "Buscar...",
+                   fillColor: Colors.grey.withValues(alpha: 0),
                 ),
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
                   fontSize: 14
                 ),
+                
+                enabled: false,
+                
               )
             ),
             Icon(
