@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/features/auth/application/providers/auth_controller.dart';
+import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
 import 'package:flutter_template/features/auth/presentation/widgets/widgets.dart';
 import 'package:flutter_template/features/shared/presentation/widgets/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +19,7 @@ class LoginForm extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     
-    final authState = ref.watch(authControllerProvider);
+    final authState = ref.watch(authProvider);
 
     final focusNode = FocusNode();
 

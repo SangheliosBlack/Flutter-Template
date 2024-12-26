@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/features/auth/application/providers/auth_controller.dart';
+import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ErrorAuthWidget extends ConsumerWidget {
@@ -11,7 +11,7 @@ class ErrorAuthWidget extends ConsumerWidget {
   Widget build(BuildContext context,ref) {
 
 
-    final errorAuthMessage = ref.watch(authControllerProvider).errorMessage;
+    final errorAuthMessage = ref.watch(authProvider).errorMessage;
 
     return AnimatedSize(
       duration: Duration(milliseconds: 200),

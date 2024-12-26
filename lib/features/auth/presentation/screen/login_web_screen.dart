@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/core/constants/constants.dart';
-import 'package:flutter_template/features/auth/application/providers/auth_controller.dart';
+import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
 import 'package:flutter_template/features/auth/presentation/widgets/widgets.dart';
 import 'package:flutter_template/features/features_screens.dart';
 import 'package:flutter_template/helpers/extensions.dart';
@@ -21,7 +21,7 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context,ref) {
 
-    final authData = ref.watch(authControllerProvider);
+    final authData = ref.watch(authProvider);
 
     return Title(
       color: Colors.red,
@@ -63,7 +63,7 @@ class LoginScreen extends ConsumerWidget {
                           
                               if (!_formKey.currentState!.validate()) return;
                           
-                              ref.read(authControllerProvider.notifier).login();
+                              ref.read(authProvider.notifier).login();
                           
                             }, 
                           ),

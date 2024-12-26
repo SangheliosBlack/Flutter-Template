@@ -3,7 +3,7 @@ import 'package:flutter_template/core/resources/data_state.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_provider.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
 import 'package:flutter_template/core/services/navigation_service/navigation_service.dart';
-import 'package:flutter_template/features/auth/application/providers/auth_state.dart';
+import 'package:flutter_template/features/auth/presentation/providers/auth_state.dart';
 import 'package:flutter_template/features/auth/domain/params/login_params.dart';
 import 'package:flutter_template/features/auth/presentation/screen/presentation_screen.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/screens/point_of_sale_screen.dart';
@@ -11,11 +11,11 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'login_user_provider.dart';
 
-part 'auth_controller.g.dart';
+part 'auth_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 
-class AuthController extends _$AuthController{
+class Auth extends _$Auth{
 
   @override
   AuthState build() {

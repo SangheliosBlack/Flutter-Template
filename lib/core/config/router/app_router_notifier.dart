@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
-import 'package:flutter_template/features/auth/application/providers/auth_controller.dart';
+import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_router_notifier.g.dart';
@@ -20,7 +20,7 @@ class AppRouterNotifier extends ChangeNotifier {
 
    AppRouterNotifier({this.ref}) {
 
-    ref?.listen(authControllerProvider, (previous, next) {
+    ref?.listen(authProvider, (previous, next) {
       _authenticationStatus = next.authenticationStatus;
     });
 
