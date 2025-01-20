@@ -36,6 +36,13 @@ class LocalStorageServiceImpl implements LocalStorageService {
     );
 
   }
+  
+  @override
+  Future<void> clear() async {
+
+    FlutterSecureStorage().deleteAll();
+
+  }
 }
 
 /*

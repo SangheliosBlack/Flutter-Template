@@ -1,1 +1,0 @@
-export 'point_of_sale_screen.dart';

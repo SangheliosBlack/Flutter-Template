@@ -13,7 +13,7 @@ class SearchBar extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 20,
-          vertical: 15
+          vertical: 7
         ),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -25,18 +25,26 @@ class SearchBar extends StatelessWidget {
               child: TextFormField(
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(0),
-                  hintText: "Buscar..."
+                  hintText: "Buscar...",
+                  fillColor: Colors.grey.withValues(alpha: 0),
+                  hintStyle: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 14
+                  ),
                 ),
                 style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w300,
                   fontSize: 14
                 ),
+                
+                enabled: false,
+                
               )
             ),
             Icon(
               BootstrapIcons.search,
               color: Colors.black,
-              size: 20,
+              size: 17,
             )
           ],
         ),

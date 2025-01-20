@@ -35,7 +35,8 @@ class Auth extends _$Auth{
 
     return AuthState(
       emailController: emailController,
-      passwordController: passwordController
+      passwordController: passwordController,
+      authenticationStatus: AuthenticationStatus.checking
     );
 
   }
@@ -90,7 +91,7 @@ class Auth extends _$Auth{
 
   Future<void> _checkAutentication() async{
 
-    await Future.delayed(Duration(milliseconds: 800));
+    await Future.delayed(Duration(milliseconds: 300));
 
     final AuthenticationStatus isAuthenticated = await ref.read(authenticationServiceNotifierProvider.notifier).checkAuthenticationStatus();
 
@@ -129,7 +130,6 @@ class Auth extends _$Auth{
       navigate(PresentationScreen.path);
 
     }
-
 
     return;
 

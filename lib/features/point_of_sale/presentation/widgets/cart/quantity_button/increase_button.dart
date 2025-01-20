@@ -1,25 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/core/config/themes/main_theme.dart';
+import 'package:flutter_template/features/point_of_sale/domain/domain.dart';
+import 'package:flutter_template/features/point_of_sale/presentation/providers/order_cart/order_cart_provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class IncreaseButton extends StatelessWidget {
+class IncreaseButton extends ConsumerWidget {
 
-  const IncreaseButton({super.key});
+  final ProductEntity product;
+
+  const IncreaseButton({
+    super.key,
+    required this.product
+  });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
 
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onTap: (){},
+      onTap: (){
+
+        ref.read(orderCartProvider.notifier).updateProductQuantity(
+          product:product,
+          quantity: product.quantity + 1
+        );
+      },
       child: AnimatedContainer(
-        width: 20,
-        height: 20,
+        width:  25,
+        height: 25,
         duration: Duration(
           milliseconds: 300
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          shape: BoxShape.circle,
           color: AppTheme.primary
         ),
         child: Center(

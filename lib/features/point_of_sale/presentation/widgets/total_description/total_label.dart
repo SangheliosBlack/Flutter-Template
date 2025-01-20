@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_template/features/point_of_sale/presentation/providers/order_cart/order_cart_provider.dart';
 import 'package:flutter_template/features/shared/presentation/widgets/labels/currency_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TotalLabel extends StatelessWidget {
+class TotalLabel extends ConsumerWidget {
 
   const TotalLabel({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
+
+    final total = ref.watch(orderCartProvider).calculateTotalAmount();
 
    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -16,15 +20,14 @@ class TotalLabel extends StatelessWidget {
           "Total",
           style: GoogleFonts.poppins(
             color: Colors.black,
-            fontSize: 12,
-            fontWeight: FontWeight.w600
+            fontSize: 13,
           ),
         ),
         CurrencyText(
-          price: 100,
+          price: total,
           textStyle: GoogleFonts.poppins(
             color: Colors.black,
-            fontSize: 12,
+            fontSize: 13,
             fontWeight: FontWeight.w600
           ),
         ),

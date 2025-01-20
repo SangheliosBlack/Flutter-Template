@@ -11,7 +11,7 @@ class HttpClientServiceImpl extends HttpClientService {
 
   late final Dio _dio;
 
-  final ProviderRef<HttpClientService> ref;
+  final Ref<HttpClientService> ref;
 
   final LocalStorageService localStorageService;
 
@@ -23,6 +23,7 @@ class HttpClientServiceImpl extends HttpClientService {
 
     _dio.interceptors.clear();
     _dio.interceptors.add(HttpClientInterceptor(localStorageService: localStorageService));
+    
     /*
     _dio.interceptors.add(LogInterceptor(
       requestBody: true,

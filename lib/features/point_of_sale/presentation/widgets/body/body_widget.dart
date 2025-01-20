@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/widgets/widgets.dart';
 
 import '../../../../../core/config/themes/main_theme.dart';
-import '../categories/categories_widget.dart';
 
 class BodyWidget extends StatelessWidget {
+  
   const BodyWidget({super.key});
 
   @override

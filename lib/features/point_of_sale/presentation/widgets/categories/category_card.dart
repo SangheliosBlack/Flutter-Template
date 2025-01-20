@@ -9,31 +9,26 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return AnimatedContainer(
-      width: 70,
+      margin: EdgeInsets.symmetric(
+        vertical: 5
+      ),
       duration: Duration(milliseconds: 300),
+      padding: EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10)
+        borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 45,
-            child: Image(
-              image: AssetImage("assets/images/category.png"),
-              fit: BoxFit.cover,
-            ),
+      child: Center(
+        child: Text(
+          "Categoria",
+          style: GoogleFonts.poppins(
+            color: Colors.black,
+            fontSize: 10,
+            fontWeight: FontWeight.w400
           ),
-          Text(
-            "Categoria",
-            style: GoogleFonts.poppins(
-              color: Colors.grey,
-              fontSize: 10
-            ),
-          )
-        ],
+        ),
       ),
     );
 

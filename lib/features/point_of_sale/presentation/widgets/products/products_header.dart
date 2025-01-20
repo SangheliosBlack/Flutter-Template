@@ -15,7 +15,7 @@ class ProductsHeader extends StatelessWidget {
         Text("Todos",
           style: GoogleFonts.poppins(
             color: Colors.black.withValues(alpha: .8),
-            fontSize: 20,
+            fontSize: 15,
             fontWeight: FontWeight.w600
           ),
         ),
@@ -26,12 +26,13 @@ class ProductsHeader extends StatelessWidget {
               "Ordenado alfabeticamente",
               style: GoogleFonts.poppins(
                 color: Colors.grey,
-                fontSize: 12,
+                fontSize: 11,
               ),
             ),
             Icon(
               BootstrapIcons.sort_alpha_down,
               color: Colors.grey,
+              size: 20,
             ),
           ],
         )

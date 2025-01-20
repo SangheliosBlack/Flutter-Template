@@ -11,4 +11,5 @@ class UiConstants {
   static String backToHomeButton1 = "Regresar a la ";
   static String backToHomeButton2 = "página de inicio";
   static String srryNotFoundPage = "Lo sentimos, no pudimos encontrar la página que buscabas:";
+  static String emptyCart = "No hay productos en la orden";
 }

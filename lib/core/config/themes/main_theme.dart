@@ -9,7 +9,9 @@ class AppTheme {
   static const Color promaryDark = Color.fromRGBO(35,85,206,1);
   static const Color secondary = Color.fromRGBO(220,231,253	,1);
   static const Color error = Color.fromRGBO(194,63,56,1	);
-  static const Color backgroundColor = Color.fromRGBO(245,246,248,1	);
+  //static const Color backgroundColor = Color.fromRGBO(245,246,248,1	);
+  static const Color backgroundColor = Color.fromRGBO(239,	239,	239	,1	);
+  static const Color delete = Color.fromRGBO(225,80,98	, 1);
   static ThemeData appTheme = ThemeData(
     appBarTheme: const AppBarTheme(elevation: 0, color: Colors.white, foregroundColor: Colors.grey),
     scaffoldBackgroundColor: Colors.white,
@@ -57,6 +59,10 @@ class AppTheme {
       hintStyle: GoogleFonts.poppins(
         color: Colors.black,
         fontWeight: FontWeight.w300
+      ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0),width: 1)
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(50),
