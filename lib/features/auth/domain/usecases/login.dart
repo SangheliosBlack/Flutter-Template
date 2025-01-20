@@ -11,7 +11,7 @@ class LoginUseCase implements Usecase<DataState<UserEntity>, LoginParams> {
   LoginUseCase(this._authRepository);
 
   @override
-  Future<DataState<UserEntity>> call({required LoginParams params}) {
+  Future<DataState<UserEntity>> execute({required LoginParams params}) {
 
     return _authRepository.login(
       params: params

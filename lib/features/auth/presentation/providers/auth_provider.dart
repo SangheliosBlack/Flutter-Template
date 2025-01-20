@@ -47,7 +47,7 @@ class Auth extends _$Auth{
 
     final params = LoginParams(email: state.email, password: state.password);
 
-    final useCase = await ref.read(loginUseCaseProvider).call(params: params);
+    final useCase = await ref.read(loginUseCaseProvider).execute(params: params);
 
     if(useCase is DataSuccess){
 
