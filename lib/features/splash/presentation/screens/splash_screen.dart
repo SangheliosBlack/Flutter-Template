@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
 import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
 import 'package:flutter_template/features/splash/presentation/views/views.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../features_screens.dart';
 
@@ -20,14 +19,14 @@ class SplashScreen extends ConsumerWidget {
 
       if(next.authenticationStatus == AuthenticationStatus.authenticated){
 
-        context.go(PoHomeScreen.path);
+        //context.go(PoHomeScreen.path);
         //context.go(HiScreen.path);
 
       }
 
       if(previous!.authenticationStatus == AuthenticationStatus.checking && next.authenticationStatus == AuthenticationStatus.notAuthenticated){
 
-        context.go(PresentationScreen.path);
+        //context.go(PresentationScreen.path);
       
       }
 
@@ -36,6 +35,7 @@ class SplashScreen extends ConsumerWidget {
     return Loader(
       isLoading: false,
       view: Scaffold(
+        key: const ValueKey('splashScreen'),
         body: ResponsiveLayout(
           watchView: SplashMobileView(), 
           mobileView: SplashMobileView(), 

@@ -1,5 +1,8 @@
 ## Changelog
 
+### [00007] -  [19/ENE/2025] - Julio Vilagrana 
+- Add sales and datatable service
+
 ### [00006] -  [25/DIC/2024] - Julio Villagrana
 - Add Point of Sale template UI and routes
 

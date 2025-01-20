@@ -11,52 +11,53 @@ environment:
 
 dependencies:
   animate_do: ^3.1.2
+  animated_flip_counter: ^0.3.4
+  animated_text_kit: ^4.2.2
+  background_fetch: ^1.3.7
+  bootstrap_icons: ^1.11.3
+  cached_network_image: ^3.4.1
+  dart_phonetics: ^1.0.1
+  dio: ^5.7.0
+  dotted_line: ^3.2.3
   expandable_page_view: ^1.0.17
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.2
   flutter_launcher_icons: ^0.14.1
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.14
-  google_fonts: ^6.2.1
-  hidable: ^1.0.5
-  local_auth: ^2.1.7
-  mockito: ^5.4.4
+  flutter_markdown: ^0.7.5
   flutter_riverpod: ^2.6.1
-  go_router: ^14.2.0
-  riverpod_annotation: ^2.6.1
-  responsive_builder: ^0.7.1
-  gap: ^3.0.1
-  bootstrap_icons: ^1.11.3
-  dio: ^5.7.0
   flutter_secure_storage: ^9.2.2
-  animated_text_kit: ^4.2.2
-  flutter_animate: ^4.5.2
-  meta: ^1.15.0
-  #realm: ^20.0.0
-  background_fetch: ^1.3.7
-  font_awesome_flutter: ^10.8.0
-  cached_network_image: ^3.4.1
-  intl: ^0.19.0
-  dotted_line: ^3.2.3
+  flutter_svg: ^2.0.14
   flutter_web_plugins:
     sdk: flutter
-
+  font_awesome_flutter: ^10.8.0
+  gap: ^3.0.1
+  go_router: ^14.2.0
+  google_fonts: ^6.2.1
+  hidable: ^1.0.5
+  intl: ^0.19.0
+  local_auth: ^2.1.7
+  meta: ^1.15.0
+  mockito: ^5.4.4
+  pull_down_button: ^0.10.2
+  responsive_builder: ^0.7.1
+  riverpod_annotation: ^2.6.1
 
 dev_dependencies:
-  riverpod_generator: ^2.6.3
-  flutter_native_splash: ^2.3.10
-  go_router_builder: ^2.3.0
-  #realm_generator: ^20.0.0
   build_runner: ^2.4.8
   flutter_lints: ^5.0.0
+  flutter_native_splash: ^2.3.10
   flutter_test:
     sdk: flutter
-
+  go_router_builder: ^2.3.0
+  integration_test:
+    sdk: flutter
+  riverpod_generator: ^2.6.3
 
 # Run command to generate .gr file
 # 1) flutter pub run flutter_launcher_icons:main
-
 flutter_launcher_icons:
   android: true
   ios: true
@@ -70,12 +71,10 @@ flutter_launcher_icons:
 # 1) flutter clean
 # 2) flutter pub get
 # 3) flutter pub run flutter_native_splash:create
-
 flutter_native_splash:
-  color: '#ffffff' 
+  color: '#ffffff'
   image: assets/images/logo.png
 # background_image:src
-
 # Configuración general de Flutter
 flutter:
   uses-material-design: true

@@ -11,12 +11,11 @@ class ProductsWidget extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.only(
-        top: 20,
+        top: 5,
         left: 20,
         right: 20
       ),
       child: const Column(
-        spacing: 15,
         children: [
           ProductsHeader(),
           ProductsGrid()

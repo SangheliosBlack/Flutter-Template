@@ -25,7 +25,7 @@ class CurrencyText extends ConsumerWidget {
     return Text(
       NumberFormat.currency(
         locale: 'es_MX', symbol: '\$'
-      ).format(10), 
+      ).format(price), 
       style: style
     );
 

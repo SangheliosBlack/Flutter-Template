@@ -24,6 +24,7 @@ class _UsernameFieldWidgetState extends State<UsernameFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      key: const ValueKey('emailField'),
       autofocus: false,
       autofillHints: const [AutofillHints.email],
       style: GoogleFonts.poppins(

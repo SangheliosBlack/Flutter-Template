@@ -40,7 +40,7 @@ class DeliveryMethodButton extends StatelessWidget {
           children: [
             Icon(
               data.icon,
-              size: 20,
+              size: 16,
               color: active ?  AppTheme.primary : Colors.grey
             ),
             Gap(5),

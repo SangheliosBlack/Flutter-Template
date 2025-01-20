@@ -8,7 +8,7 @@
       "args": [
         "--dart-define-from-file=env/dev.json",
         "--flavor",
-        "Development"
+        "development"
       ]
     },
     {
@@ -23,5 +23,17 @@
         "development"
       ],
     },
+    {
+      "name": "Template Flutter Integration Test (DEV)",
+      "request": "launch",
+      "type": "dart",
+      "program": "integration_test/core_test.dart",
+      "toolArgs": [
+        "--dart-define-from-file=env/dev.json",
+        "--flavor",
+        "development",
+        "--verbose"
+      ]
+    }
   ]
 }

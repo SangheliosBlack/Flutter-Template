@@ -17,14 +17,14 @@ class DiscountLabel extends StatelessWidget {
           "Descuento",
           style: GoogleFonts.poppins(
             color: Colors.grey,
-            fontSize: 12
+            fontSize: 15
           ),
         ),
         CurrencyText(
-          price: 100,
+          price: 0,
           textStyle: GoogleFonts.poppins(
             color: Colors.grey,
-            fontSize: 12,
+            fontSize: 15,
             fontWeight: FontWeight.w600
           ),
         ),

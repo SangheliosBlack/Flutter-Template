@@ -4,7 +4,7 @@ import 'package:flutter_template/features/point_of_sale/presentation/widgets/wid
 
 class PoHomeScreen extends StatelessWidget {
 
-  static const String path = "/home";
+  static const String path = "/point-of-sale";
 
   const PoHomeScreen({super.key});
 
@@ -12,6 +12,7 @@ class PoHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
+      key: ValueKey("poScreen"),
       color: AppTheme.backgroundColor,
       padding: EdgeInsets.only(top: 20),
       child: Padding(

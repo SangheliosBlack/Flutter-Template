@@ -11,13 +11,16 @@ class TotalDescription extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 15
+      ),
       child: Column(
         spacing: 10,
         children: [
           SubTotalLabel(),
-          DiscountLabel(),
-          TaxesLabel(),
+          //DiscountLabel(),
+          //TaxesLabel(),
           DottedLine(
             direction: Axis.horizontal,
             alignment: WrapAlignment.center,

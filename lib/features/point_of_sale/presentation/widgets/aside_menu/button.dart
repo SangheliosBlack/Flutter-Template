@@ -18,14 +18,14 @@ class AsideButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onTap: onTap,
+      onTap: active ? null : onTap,
       child: Container(
         padding: EdgeInsets.symmetric(
           vertical: 12,
           horizontal: 12
         ),
         decoration: BoxDecoration(
-          color: active ? AppTheme.secondary : Colors.white,
+          color: active ? AppTheme.secondary : AppTheme.backgroundColor,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Icon(

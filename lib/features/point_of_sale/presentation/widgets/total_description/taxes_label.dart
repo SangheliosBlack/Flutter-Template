@@ -17,14 +17,14 @@ class TaxesLabel extends StatelessWidget {
           "Impuestos",
           style: GoogleFonts.poppins(
             color: Colors.grey,
-            fontSize: 12
+            fontSize: 15
           ),
         ),
         CurrencyText(
           price: 100,
           textStyle: GoogleFonts.poppins(
             color: Colors.grey,
-            fontSize: 12,
+            fontSize: 15,
             fontWeight: FontWeight.w600
           ),
         ),

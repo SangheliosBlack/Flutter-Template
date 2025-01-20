@@ -13,7 +13,7 @@ Bienvenido a la plantilla Flutter, una base sólida para construir aplicaciones 
 
 ![Stripe](https://img.shields.io/badge/Stripe-7455E8?style=for-the-badge&logo=Stripe&logoColor=white)
 ![Socket.io](https://img.shields.io/badge/Socket.io-000000?style=for-the-badge&logo=Socket.io&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-4887E7?style=for-the-badge&logo=Firebase&logoColor=F4D208)
+![Firebase](https://img.shields.io/badge/Firebase-4887E7?style=for-t∏he-badge&logo=Firebase&logoColor=F4D208)
 ![Gitlab](https://img.shields.io/badge/Gitlab-FFFFFF?style=for-the-badge&logo=Gitlab&logoColor=#D74A2C)
 ![Mockito](https://img.shields.io/badge/Mockito-DBDFFF?style=for-the-badge&logo=Dart&logoColor=black)
 ![Realm](https://img.shields.io/badge/Realm-3948BB?style=for-the-badge&logo=Realm&logoColor=white)

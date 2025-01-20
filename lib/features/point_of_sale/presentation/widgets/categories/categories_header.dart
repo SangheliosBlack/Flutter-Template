@@ -18,7 +18,7 @@ class CategoriesHeader extends StatelessWidget {
           Text("Categorias",
             style: GoogleFonts.poppins(
               color: Colors.black.withValues(alpha: .8),
-              fontSize: 20,
+              fontSize: 15,
               fontWeight: FontWeight.w600
             ),
           ),
@@ -26,6 +26,7 @@ class CategoriesHeader extends StatelessWidget {
           Icon(
             BootstrapIcons.three_dots,
             color: Colors.black,
+            size: 20,
           )
         ],
       ),

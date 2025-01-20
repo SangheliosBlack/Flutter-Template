@@ -24,6 +24,7 @@ class LoginScreen extends ConsumerWidget {
     final authData = ref.watch(authProvider);
 
     return Title(
+      key: ValueKey("authLogin"),
       color: Colors.red,
       title: "Iniciar sesión",
       child: Container(
@@ -55,6 +56,7 @@ class LoginScreen extends ConsumerWidget {
                       Column(
                         children: [
                           AdaptativeButton(
+                            key:  ValueKey("${UiConstants.loginButtonText}1"),
                             labelText: UiConstants.loginButtonText, 
                             isLoading: authData.isLoading,
                             onTap: () async {

@@ -10,11 +10,11 @@ class CategoryList extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return SizedBox(
-      height: 100,
+      height: 40,
       child: ListView.separated(
+        physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 20),
         scrollDirection: Axis.horizontal,
-        
         shrinkWrap: true,
         itemBuilder: (_, i) {  
       

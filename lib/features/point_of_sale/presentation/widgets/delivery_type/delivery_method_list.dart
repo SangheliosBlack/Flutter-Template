@@ -14,6 +14,9 @@ class DeliveryMethodList extends StatelessWidget {
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.symmetric(  
+          horizontal: 15
+        ),
         itemBuilder: ( _, index) {
       
           final data = ContantsData.deliveryTypes[index];

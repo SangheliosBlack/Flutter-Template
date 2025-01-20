@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/core/constants/constants_data.dart';
 
 import 'product_card.dart';
 
@@ -10,21 +11,27 @@ class ProductsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final productsMocks = ContantsData.productList;
+
     return GridView.builder(
-      scrollDirection: Axis.vertical,
+      padding: EdgeInsets.only(top:10),
+      scrollDirection: Axis.vertical, 
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
+        crossAxisCount: 3,
         crossAxisSpacing: 15,
         mainAxisSpacing: 15,
         childAspectRatio: 1,
       ),
       itemBuilder: (_, i) {
     
-        return ProductCard();
+        final product = productsMocks[i];
+    
+        return ProductCard(product: product,);
     
       },
-      itemCount: 15,
+      itemCount: productsMocks.length,
     );
 
   }

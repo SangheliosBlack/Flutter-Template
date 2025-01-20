@@ -18,6 +18,7 @@ class PointOfSaleLayout extends StatelessWidget {
       color: AppTheme.backgroundColor,
       width: context.width,
       child: Scaffold(
+        backgroundColor: AppTheme.backgroundColor,
         body: Row(
         children: [
           AsideMenu(),

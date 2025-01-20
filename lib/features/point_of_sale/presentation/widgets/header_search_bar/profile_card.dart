@@ -14,17 +14,18 @@ class ProfileCard extends StatelessWidget {
       width: 230,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: Row(
               spacing: 10,
               children: [
                 Container(
-                  height: 50,
-                  width: 50,
+                  height: 35,
+                  width:  35,
                   padding: EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 10
+                    vertical: 7,
+                    horizontal: 7
                   ),
                   decoration: BoxDecoration(
                     color: AppTheme.primary,
@@ -54,7 +55,7 @@ class ProfileCard extends StatelessWidget {
                         Text(
                         "Caja 1",
                         style: GoogleFonts.poppins(
-                          color: Colors.grey,
+                          color: Colors.black.withValues(alpha: .8),
                           fontSize: 11,
                           fontWeight: FontWeight.w300
                         ),
@@ -65,7 +66,10 @@ class ProfileCard extends StatelessWidget {
               ],
             ),
           ),
-          Icon(BootstrapIcons.gear)
+          Icon(
+            BootstrapIcons.gear,
+            size: 20,
+          )
         ],
       ),
     );

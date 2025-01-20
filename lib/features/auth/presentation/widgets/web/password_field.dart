@@ -33,6 +33,7 @@ class _PassFieldWidget extends State<PassFieldWidget> {
   Widget build(BuildContext context) {
     
     return TextFormField(
+      key: const ValueKey('passwordField'),
       autofocus: false,
       textCapitalization: TextCapitalization.words,
       //focusNode: widget.focus,

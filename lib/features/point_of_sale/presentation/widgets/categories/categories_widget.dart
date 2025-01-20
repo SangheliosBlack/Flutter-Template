@@ -8,17 +8,12 @@ class CategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      margin: EdgeInsets.only(
-        top: 25
-      ),
-      child: Column(
-        spacing: 20,
-        children: [
-          CategoriesHeader(),
-          CategoryList()
-        ],
-      ),
+    return Column(
+      spacing: 5,
+      children: [
+        CategoriesHeader(),
+        CategoryList()
+      ],
     );
 
   }

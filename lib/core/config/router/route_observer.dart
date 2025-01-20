@@ -21,6 +21,12 @@ class GoRouterObserver extends NavigatorObserver {
 
       }else{
 
+       if(route.settings.arguments == null){
+
+        return;
+
+       }
+
         path = extractPath(input:route.settings.toString())!;
 
       }
