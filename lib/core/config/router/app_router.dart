@@ -1,15 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/core/config/router/app_router_notifier.dart';
-import 'package:flutter_template/core/config/router/route_observer.dart';
-import 'package:flutter_template/core/config/router/routes/routes.dart';
-import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
-import 'package:flutter_template/core/utils/logs/logger.dart';
-import 'package:flutter_template/core/utils/transitions/custom_transitions.dart';
-import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 
-import '../../../features/features_screens.dart';
+import 'package:flutter_template/features/features_screens.dart';
+import 'package:flutter_template/core/core.dart';
 
 part 'app_router.g.dart';
 
@@ -76,7 +71,8 @@ GoRouter appRouter(Ref ref) {
         },
       ),
       PointOfSaleNavigator.routes(ref),
-      AuthNavigator.routes
+      AuthNavigator.routes(ref),
+      AdminNavigator.routes(ref)
     ],
     redirect: (context,state){
 
@@ -102,7 +98,9 @@ GoRouter appRouter(Ref ref) {
 
         if(location == "/" || location ==  LoginScreen.path){
 
-          return PoHomeScreen.path;
+          //return PoHomeScreen.path;
+
+          return AdminHomeScreen.path;
 
         }
 

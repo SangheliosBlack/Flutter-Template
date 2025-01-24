@@ -1,8 +1,35 @@
+import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:flutter_template/features/admin/domain/entities/entities.dart';
 import 'package:flutter_template/features/point_of_sale/domain/domain.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/domain/domain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+
 class ContantsData{
+
+  static List<MenuOptionEntity> adminListMenuOptions = [
+    MenuOptionEntity(titulo: "Home", icono: BootstrapIcons.house, subMenu: []),
+    MenuOptionEntity(titulo: "Tramites", icono: BootstrapIcons.archive, subMenu: [
+      "VISA Primera vez",
+      "VISA Renovacion",
+      "Global Entry",
+      "Pasaporte Mexicano"
+    ]),
+    MenuOptionEntity(
+      titulo: "Usuarios",
+      icono: BootstrapIcons.person,
+      subMenu: ["Administracion", "Plataforma"],
+    ),
+    MenuOptionEntity(
+      titulo: "Tiempos de espera",
+      icono: BootstrapIcons.calendar_event,
+      subMenu: []),
+    MenuOptionEntity(
+      titulo: "Referidos",
+      icono: BootstrapIcons.globe_americas,
+      subMenu: [],
+    ),
+  ];
 
   static List deliveryTypes = [
     DeliveryTypeEntity(

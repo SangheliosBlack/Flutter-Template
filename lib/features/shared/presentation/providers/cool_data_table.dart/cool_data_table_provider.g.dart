@@ -6,7 +6,7 @@ part of 'cool_data_table_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$coolDataTableHash() => r'd3041c259e7d79215abaa0e1a688d188cc867271';
+String _$coolDataTableHash() => r'027433b660b60fcaec0b4fe39cedd6b4c4f6213b';
 
 /// See also [CoolDataTable].
 @ProviderFor(CoolDataTable)

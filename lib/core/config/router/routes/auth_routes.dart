@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/features/shared/presentation/layouts/auth_layout.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_template/features/features_screens.dart';
@@ -9,7 +10,7 @@ final authNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'AuthNavigator');
 
 class AuthNavigator{
 
-  static final routes = ShellRoute(
+  static routes (Ref ref) => ShellRoute(
     navigatorKey: authNavigatorKey,
     pageBuilder: (context, state, child) {
       return PageTransitions.buildPageWithFadeInFromCenter(

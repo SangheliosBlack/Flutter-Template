@@ -1,5 +1,8 @@
 ## Changelog
 
+### [00008] - [23/ENE/2025] - Julio Villagrana
+- Add admin feature
+
 ### [00007] -  [19/ENE/2025] - Julio Vilagrana 
 - Add sales and datatable service
 
