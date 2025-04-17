@@ -61,6 +61,16 @@ class AsideMenu extends ConsumerWidget {
 
             },
           ),
+          Gap(15),
+          AsideButton(
+            active: route == ClientsScreen.path,
+            icon: BootstrapIcons.people_fill,
+            onTap: (){
+
+              context.push(ClientsScreen.path);
+
+            },
+          ),
           Spacer(),
           AsideButton(
             active: false,

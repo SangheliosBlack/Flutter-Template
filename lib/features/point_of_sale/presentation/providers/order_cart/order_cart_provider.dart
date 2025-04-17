@@ -1,6 +1,10 @@
 
+import 'package:flutter_template/core/core.dart';
+import 'package:flutter_template/core/utils/extensions/to_nullable.dart';
+import 'package:flutter_template/features/clients/domain/entities/client_entity.dart';
 import 'package:flutter_template/features/point_of_sale/domain/entities/product_entity.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/providers/order_cart/order_cart_state.dart';
+import 'package:nullable_absent/nullable_absent.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'order_cart_provider.g.dart';
@@ -14,6 +18,19 @@ class OrderCart extends _$OrderCart {
     return OrderCartState();
 
   }
+
+    void setClient({required ClientEntity client}) {
+
+      state = state.copyWith(clientSelected: NullableAbsent(client));
+
+
+    }
+
+    void removeClient() {
+
+      state = state.copyWith(clientSelected: NullableAbsent(null));
+
+    }
 
   void addProduct({required ProductEntity product}) {
 
@@ -38,6 +55,16 @@ class OrderCart extends _$OrderCart {
     updatedMap[product.id] = updatedProduct;
     state = state.copyWith(productList: updatedMap);
     
+  }
+
+  void updateDeliveryAdded(){
+
+    final lastValue = state.deliveyAdded;
+
+    state = state.copyWith(
+      deliveyAdded: !lastValue
+    );
+
   }
   
   void cleanOrder(){

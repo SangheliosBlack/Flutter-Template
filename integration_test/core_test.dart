@@ -54,7 +54,7 @@ void main() {
       expect(find.byKey(const ValueKey('emailField')), findsOneWidget);
       await tester.enterText(
         find.byKey(const ValueKey('emailField')), 
-        'julio.villagrana.sanghelios22@gmail.com',
+        'test@gmail.com',
       );
 
       // Espera para visualizar la entrada de texto

@@ -7,3 +7,5 @@ export 'total_description/total_description.dart';
 export 'header_search_bar/header_search_bar.dart';
 export 'products/products.dart';
 export 'categories/categories.dart';
+export 'clients/clients.dart';
+export 'select_client/select_client.dart';

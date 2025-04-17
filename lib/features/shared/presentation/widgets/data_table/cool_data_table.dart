@@ -31,7 +31,7 @@ class CoolDataTable<T extends Mappable> extends ConsumerWidget {
   @override
   Widget build(BuildContext context,ref) {
 
-     const List<int> defaultCellsPerPage = [10,25,30];
+    const List<int> defaultCellsPerPage = [10,25,30];
   
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(coolDataTableProvider.notifier).updateShowQuantity(
@@ -87,6 +87,7 @@ class CoolDataTable<T extends Mappable> extends ConsumerWidget {
   Widget _buildHeaders(List<RowHeader> headers) {
     return Container(
       margin: EdgeInsets.only(
+        right: 117
       ),
       height: 50,
       decoration: BoxDecoration(
@@ -136,7 +137,8 @@ Widget _buildRows(List<Widget> rows) {
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     child: SimpleCheckButton(),
                   ),
-                Expanded(child: cells), // Pasamos directamente el widget (ya no es necesario .map())
+                Expanded(child: cells), 
+                EditRow()
               ],
             ),
           );

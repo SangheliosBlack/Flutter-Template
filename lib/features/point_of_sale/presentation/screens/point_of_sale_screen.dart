@@ -18,6 +18,7 @@ class PointOfSaleScreen extends StatelessWidget {
         bottom: false,
         top: false,
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: ResponsiveLayout(
             watchView: DashboardMobileView(), 
             mobileView: DashboardMobileView(), 

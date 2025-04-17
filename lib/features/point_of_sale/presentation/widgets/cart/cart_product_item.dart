@@ -21,6 +21,7 @@ class CartProductItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context,ref) {
 
+
     return SlideInRight(
       duration: Duration(milliseconds: 200),
       child: Dismissible(
@@ -106,12 +107,11 @@ class CartProductItem extends ConsumerWidget {
                     ],
                   ),
                 ),
-                
+               
                 if(product.quantity > 1)...{
                   Column(
                     children: [
-                    Gap(8)
-        ,               Row(
+                    Gap(8),               Row(
                       children: [
                         Text(
                           "Subtotal: ",

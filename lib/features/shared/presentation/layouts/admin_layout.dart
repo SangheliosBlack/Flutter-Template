@@ -18,7 +18,6 @@ class AdminLayout extends StatelessWidget {
       body: Row(
         children: [
           AdminAsideMenu(),
-          Spacer()
         ],
       ),
     );
