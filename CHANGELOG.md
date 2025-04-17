@@ -1,5 +1,8 @@
 ## Changelog
 
+### [00009] - [17/ABR/2025] - JULIO VILLAGRANA
+- Add clients feature
+
 ### [00008] - [23/ENE/2025] - Julio Villagrana
 - Add admin feature
 

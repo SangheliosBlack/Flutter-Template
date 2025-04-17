@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_template/core/services/pos_printer/providers/pos_printer_provider.dart';
 import 'package:flutter_template/features/point_of_sale/domain/entities/entities.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/providers/order_cart/order_cart_provider.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/providers/sales/sales_provider.dart';
@@ -35,6 +36,8 @@ class AccountMenu extends ConsumerWidget {
         children: [
           HeaderAccountMenu(),
           CartProductList(),
+          SelectClientWidget(),
+          SelectClientCard(),
           TotalDescription(),
           PaymentMethodCard(),
           Container(
@@ -42,7 +45,9 @@ class AccountMenu extends ConsumerWidget {
               horizontal: 15
             ),
             child: Button(
-              onTap: () { 
+              onTap: () async { 
+
+                if(orderCartState.productList.isEmpty) return;
 
                 final random = Random();
                 
@@ -54,6 +59,8 @@ class AccountMenu extends ConsumerWidget {
                   total: orderCartState.calculateTotalAmount(), 
                   fecha: DateTime.now()
                 );
+
+                await ref.read(printerServiceProvider).printReceipt(receipt: "Test");
 
                 ref.read(salesProvider.notifier).addSale(sale: newSale);
 

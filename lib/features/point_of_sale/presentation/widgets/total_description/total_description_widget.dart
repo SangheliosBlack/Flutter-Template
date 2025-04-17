@@ -18,6 +18,7 @@ class TotalDescription extends StatelessWidget {
       child: Column(
         spacing: 10,
         children: [
+          DeliveryLabel(),
           SubTotalLabel(),
           //DiscountLabel(),
           //TaxesLabel(),

@@ -38,12 +38,18 @@ class _DashboardMobileViewState extends State<DashboardMobileView> with WidgetsB
   Widget build(BuildContext context) {
     return Container(
       color: AppTheme.primaryBody,
-      child: Row(
-        children: [
-          AsideMenu(),
-          BodyWidget(),
-          AccountMenu()
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                AsideMenu(),
+                BodyWidget(),
+                AccountMenu()
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

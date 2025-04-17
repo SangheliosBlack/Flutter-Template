@@ -1,10 +1,19 @@
+import 'package:flutter_template/core/core.dart';
+import 'package:flutter_template/features/clients/domain/entities/client_entity.dart';
 import 'package:flutter_template/features/point_of_sale/domain/entities/entities.dart';
+import 'package:nullable_absent/nullable_absent.dart';
 
 class OrderCartState {
   
   final Map<int, ProductEntity> productList;
+  final bool deliveyAdded;
+  final ClientEntity? clientSelected;
 
-  OrderCartState({this.productList = const {}});
+  OrderCartState({
+    this.productList = const {},
+    this.deliveyAdded = false,
+    this.clientSelected 
+  });
 
   OrderCartState addProduct(ProductEntity product) {
     final updatedMap = Map<int, ProductEntity>.from(productList);
@@ -27,20 +36,25 @@ class OrderCartState {
   }
 
   double calculateTotalAmount() {
-    return productList.values.fold(
+
+    return (deliveyAdded ? 30 : 0) +  productList.values.fold(
       0.0,
       (sum, product) => sum + (product.pricePf * product.quantity),
     );
   }
 
   OrderCartState copyWith({
-    Map<int, ProductEntity>? productList
+    Map<int, ProductEntity>? productList,
+    bool? deliveyAdded,
+    NullableAbsent<ClientEntity> clientSelected = const NullableAbsent.absent(),
   }) {
     return OrderCartState(
-      productList: productList ?? this.productList
+      productList: productList ?? this.productList,
+      deliveyAdded: deliveyAdded ?? this.deliveyAdded,
+      clientSelected: NullableAbsent(this.clientSelected).apply(clientSelected),
     );
-  }
-
-  
+  } 
 
 }
+
+

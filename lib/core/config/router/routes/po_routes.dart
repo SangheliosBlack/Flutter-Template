@@ -49,6 +49,18 @@ class PointOfSaleNavigator{
           );
         },
       ),
+      GoRoute(
+        path: ClientsScreen.path,
+        name: ClientsScreen.path,
+        builder: (_,__) => SalesScreen(),
+        pageBuilder: (context, state) {
+          return PageTransitions.buildPageWithFadeInFromCenter(
+            state: state,
+            context: context,
+            child: const ClientsScreen()
+          );
+        },
+      ),
     ]
   );
 

@@ -1,0 +1,1 @@
+export 'implementation/ip_pos_printer_service.dart';

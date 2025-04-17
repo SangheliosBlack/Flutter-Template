@@ -98,9 +98,9 @@ GoRouter appRouter(Ref ref) {
 
         if(location == "/" || location ==  LoginScreen.path){
 
-          //return PoHomeScreen.path;
+          return PoHomeScreen.path;
 
-          return AdminHomeScreen.path;
+          //return AdminHomeScreen.path;
 
         }
 
