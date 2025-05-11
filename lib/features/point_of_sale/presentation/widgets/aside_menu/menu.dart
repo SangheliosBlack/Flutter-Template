@@ -2,7 +2,7 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/core/config/router/current_route.dart';
-import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
+import 'package:flutter_template/features/auth/application/use_cases/providers/auth_provider.dart';
 import 'package:flutter_template/features/features_screens.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/widgets/widgets.dart';
 import 'package:gap/gap.dart';

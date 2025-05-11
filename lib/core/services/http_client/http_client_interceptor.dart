@@ -88,7 +88,7 @@ bool _isPublicEndpoint(String path) {
 
   Future<void> refreshToken() async {
 
-    final refreshToken = await localStorageService.getValue(key: LocalStorageKeys.REFRESH_TOKEN);
+    final refreshToken = await localStorageService.getValue(key: LocalStorageKeys.ACCESS_TOKEN);
 
     if (refreshToken == null) {
 
@@ -97,21 +97,31 @@ bool _isPublicEndpoint(String path) {
     }
 
     try {
+      
       final dio = Dio(
         BaseOptions(
-          baseUrl: Environments.PATH_URL,
+          baseUrl: '${Environments.PATH_URL}/api/${Environments.API_VERSION}/${Environments.ENVIROMENT}'
+        ),
+      );
+      
+      final response = await dio.get(
+        'auth/refreshToken',
+        options: Options(
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer $refreshToken",
+          },
         ),
       );
 
-      final response = await dio.post(
-        '/users/${Environments.ENVIROMENT}/user/RefreshToken',
-        data: {"RefreshToken": refreshToken},
-      );
+      await localStorageService.setValue(key: LocalStorageKeys.ACCESS_TOKEN, value: response.data["data"]["accessToken"].toString());
 
-      await localStorageService.setValue(key: LocalStorageKeys.ACCESS_TOKEN, value: response.data["access_token"].toString());
     } catch (e) {
+
       throw Exception("Failed to refresh token: $e");
+
     }
+
   }
 
   Future<Response<dynamic>> _retry(RequestOptions requestOptions) async {

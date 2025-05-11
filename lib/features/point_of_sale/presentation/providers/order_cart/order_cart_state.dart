@@ -1,4 +1,3 @@
-import 'package:flutter_template/core/core.dart';
 import 'package:flutter_template/features/clients/domain/entities/client_entity.dart';
 import 'package:flutter_template/features/point_of_sale/domain/entities/entities.dart';
 import 'package:nullable_absent/nullable_absent.dart';

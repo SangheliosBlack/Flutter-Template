@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
-import 'package:flutter_template/features/auth/presentation/providers/auth_provider.dart';
+import 'package:flutter_template/features/auth/application/use_cases/providers/auth_provider.dart';
 import 'package:flutter_template/features/splash/presentation/views/views.dart';
 
 import '../../../features_screens.dart';

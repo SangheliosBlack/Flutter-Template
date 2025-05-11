@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/features/clients/application/application.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/domain/domain.dart';
-import 'package:flutter_template/features/point_of_sale/presentation/providers/sales/sales_provider.dart';
 
 import 'package:flutter_template/core/config/themes/main_theme.dart';
-import 'package:flutter_template/features/point_of_sale/domain/entities/entities.dart';
 
 
 import '../../../shared/presentation/widgets/data_table/cool_data_table.dart';

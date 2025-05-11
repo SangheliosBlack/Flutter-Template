@@ -1,6 +1,4 @@
 
-import 'package:flutter_template/core/core.dart';
-import 'package:flutter_template/core/utils/extensions/to_nullable.dart';
 import 'package:flutter_template/features/clients/domain/entities/client_entity.dart';
 import 'package:flutter_template/features/point_of_sale/domain/entities/product_entity.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/providers/order_cart/order_cart_state.dart';
