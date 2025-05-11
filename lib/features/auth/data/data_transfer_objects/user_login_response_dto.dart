@@ -10,10 +10,10 @@ class UserLoginResponseDTO {
     required this.accessToken,
   });
 
-  factory UserLoginResponseDTO.fromMap(Map<String, dynamic> map) {
+  factory UserLoginResponseDTO.fromJson(Map<String, dynamic> map) {
 
     return UserLoginResponseDTO(
-      user: UserDTO.fromMap(map['user']),
+      user: UserDTO.fromJson(map['user']),
       accessToken: map['accessToken'],
     );
 

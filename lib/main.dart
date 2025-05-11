@@ -9,17 +9,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter_template/core/config/themes/main_theme.dart';
 import 'package:flutter_template/core/services/background_fetch/background_fetch_service.dart';
-import 'package:flutter_web_plugins/url_strategy.dart'; 
+import 'package:flutter_template/core/services/cache_service/cache_service_impl.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:go_router/go_router.dart'; 
 import 'core/config/router/app_router.dart';
 
 void main() async {
-  
+
+  GoRouter.optionURLReflectsImperativeAPIs = true;
+
+  await CacheServiceImpl().initService();
 
   WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown, DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
 
   usePathUrlStrategy();
+  
 
   runApp(ProviderScope(child: MainApp()));
 

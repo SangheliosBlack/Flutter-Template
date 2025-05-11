@@ -1,5 +1,8 @@
 ## Changelog
 
+### [00010] - [11/MAY/2025] - JULIO VILLAGRANA
+- Refactor refresh and keep data local user
+
 ### [00009] - [17/ABR/2025] - JULIO VILLAGRANA
 - Add clients feature
 

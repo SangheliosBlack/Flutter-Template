@@ -1,6 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/constants/constants.dart';
+import 'package:flutter_template/core/constants/constants_data.dart';
 import 'package:flutter_template/features/admin/domain/domain.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -85,7 +85,7 @@ class _AdminAsideMenuState extends State<AdminAsideMenu> {
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
-                                    Colors.black.withOpacity(.1),
+                                    Colors.black.withAlpha(25),
                                     Colors.black,
                                   ]
                                 )

@@ -1,6 +1,7 @@
 import 'package:flutter_template/core/constants/local_storage_keys.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
 import 'package:flutter_template/core/services/local_storage/local_storage_service_impl.dart';
+import 'package:flutter_template/features/auth/application/use_cases/providers/auth_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'authentication_service_provider.g.dart';
@@ -24,6 +25,8 @@ class AuthenticationServiceNotifier extends _$AuthenticationServiceNotifier {
     final isAuthenticated = await _localStorage.getValue(key: LocalStorageKeys.ACCESS_TOKEN);
 
     if (isAuthenticated != null && isAuthenticated.isNotEmpty) {
+
+      await ref.read(authProvider.notifier).loadUser();
 
       state = state.copyWith(status: AuthenticationStatus.authenticated, token: isAuthenticated);
 

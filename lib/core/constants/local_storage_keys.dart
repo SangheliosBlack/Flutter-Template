@@ -3,6 +3,6 @@
 class LocalStorageKeys {
 
   static const String ACCESS_TOKEN = "accessToken";
-  static const String REFRESH_TOKEN = "refreshToken";
+  static const String DEVICE_ID = "deviceId";
 
 }

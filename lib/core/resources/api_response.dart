@@ -10,14 +10,11 @@ class ApiResponse<T> {
     this.data,
   });
 
-  factory ApiResponse.fromJson(
-    Map<String, dynamic> json,
-    T Function(Map<String, dynamic>) createData,
-  ) {
+  factory ApiResponse.fromJson(Map<String, dynamic> json) {
     return ApiResponse<T>(
-      status: json['status'],
-      message: json['message'],
-      data: json['data'] != null ? createData(json['data']) : null,
+      status: json['status']?.toString() ?? 'UNKNOWN',
+      message: json['message']?.toString() ?? '',
+      data: json['data'] as T?,
     );
   }
 }

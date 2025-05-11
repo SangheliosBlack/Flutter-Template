@@ -15,7 +15,7 @@ class UserDTO {
     required this.lastUpdate
   });
 
-  factory UserDTO.fromMap(Map<String, dynamic> map) {
+  factory UserDTO.fromJson(Map<String, dynamic> map) {
     return UserDTO(
       id: map['id'],
       email: map['email'],

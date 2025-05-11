@@ -1,5 +1,4 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:dart_phonetics/dart_phonetics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -34,16 +33,6 @@ class PresentationScreen extends ConsumerWidget {
       'また会えて嬉しいですね',
       'سررت برؤيتك مرة أخرى',
     ];
-
-    final inputString = 'koca';
-
-    final doubleMetaphone = DoubleMetaphone.withMaxLength(2);
-    _printResult(doubleMetaphone, inputString);
-
-    final inputString2 = 'coca';
-
-    _printResult(doubleMetaphone, inputString2);
-
     return Container(
       key: ValueKey('welcomeScreen'),
       color: Colors.white ,
@@ -189,12 +178,5 @@ class PresentationScreen extends ConsumerWidget {
       ),
     );
   }
-
-  void _printResult(PhoneticEncoder encoder, String input) {
-  final encoding = encoder.encode(input);
-  // ignore: avoid_print
-  print(
-      '${encoder.runtimeType.toString()} - "$input"\n  primary = ${encoding?.primary}\n  alternate = ${encoding?.alternates}\n');
-}
 
 }

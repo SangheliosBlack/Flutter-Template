@@ -49,6 +49,6 @@ app.*.map.json
 #Enviroment Variables
 *.env
 
-/env/dev.json
+/env/
 
 

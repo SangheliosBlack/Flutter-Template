@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/constants/constants.dart';
+import 'package:flutter_template/core/constants/constants_data.dart';
 import 'package:flutter_template/features/point_of_sale/presentation/widgets/widgets.dart';
 import 'package:gap/gap.dart';
 
