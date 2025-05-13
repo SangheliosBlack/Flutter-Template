@@ -1,5 +1,17 @@
 ## Changelog
 
+### [00011] - [13/MAY/2025] - JULIO VILLAGRANA
+
+- Added FCM configuration and permissions in AndroidManifest.xml
+- Implemented NotificationService for handling FCM token and permissions
+- Created NotificationPermission screen for user notification permissions
+- Updated AuthRepository to include FCM token management
+- Refactored user loading and updating logic to accommodate FCM token
+- Added Firebase options for web, Android, and iOS platforms
+- Updated environment variables for Firebase configuration
+- Enhanced routing to include NotificationPermission screen
+- Updated changelog to reflect new features and changes
+
 ### [00010] - [11/MAY/2025] - JULIO VILLAGRANA
 - Refactor refresh and keep data local user
 

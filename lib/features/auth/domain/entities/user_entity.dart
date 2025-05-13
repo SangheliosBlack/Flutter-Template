@@ -23,12 +23,16 @@ class UserEntity {
   @HiveField(4)
   final DateTime lastUpdate;
 
+  @HiveField(5)
+  final String fcmToken;
+
   UserEntity({
     required this.id,
     required this.email,
     required this.name,
     required this.role,
     required this.lastUpdate,
+    required this.fcmToken
   });
 
   UserEntity copyWith({
@@ -38,6 +42,7 @@ class UserEntity {
     String? lastName,
     RoleEntity? role,
     DateTime? lastUpdate,
+    String? fcmToken
   }) {
     return UserEntity(
       id: id ?? this.id,
@@ -45,6 +50,7 @@ class UserEntity {
       name: name ?? this.name,
       role: role ?? this.role,
       lastUpdate: lastUpdate ?? this.lastUpdate,
+      fcmToken: fcmToken ?? this.fcmToken
     );
   }
 }

@@ -13,6 +13,7 @@ class UserMapper {
       email: dto.email, 
       role: RoleMapper.toEntity(dto: dto), 
       lastUpdate: dto.lastUpdate,
+      fcmToken:dto.fcmToken
     );
 
   }
@@ -23,7 +24,8 @@ class UserMapper {
       name: entity.name,
       email: entity.email, 
       role: entity.role.name,
-      lastUpdate: entity.lastUpdate,
+      lastUpdate: entity.lastUpdate, 
+      fcmToken: entity.fcmToken,
     );
   }
 }

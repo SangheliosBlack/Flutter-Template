@@ -22,13 +22,14 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       name: fields[2] as String,
       role: fields[3] as RoleEntity,
       lastUpdate: fields[4] as DateTime,
+      fcmToken: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserEntity obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       ..writeByte(3)
       ..write(obj.role)
       ..writeByte(4)
-      ..write(obj.lastUpdate);
+      ..write(obj.lastUpdate)
+      ..writeByte(5)
+      ..write(obj.fcmToken);
   }
 
   @override

@@ -38,7 +38,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
    @override
-  Future<DataState<UserEntity>> loadUser() async {
+  Future<DataState<UserEntity>> loadLocalUser() async {
 
     final localResponse = await localDataSource.getCachedUser();
 
@@ -57,6 +57,28 @@ class AuthRepositoryImpl implements AuthRepository {
       return DataSuccess(userEntity);
 
     }
+
+  }
+  
+  @override
+  Future<DataState<UserEntity>> updateFcmToken({required String fcmToken}) async {
+
+    final remoteResponse = await remoteDataSource.updateFcmToken(fcmToken: fcmToken);
+
+    if(remoteResponse is DataSuccess){
+
+    final userEntity = UserMapper.toEntity(remoteResponse.data!);
+
+      await localDataSource.saveUser(userEntity);
+
+      return DataSuccess(userEntity);
+
+    }else{
+
+      return DataFailed(remoteResponse.error!);
+
+    }
+
   }
 
 }

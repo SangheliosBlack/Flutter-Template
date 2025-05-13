@@ -6,13 +6,15 @@ class UserDTO {
   final String name;
   final String role;
   final DateTime lastUpdate;
+  final String fcmToken;
 
   UserDTO({
     required this.id,
     required this.email, 
     required this.name, 
     required this.role, 
-    required this.lastUpdate
+    required this.lastUpdate,
+    required this.fcmToken
   });
 
   factory UserDTO.fromJson(Map<String, dynamic> map) {
@@ -22,6 +24,7 @@ class UserDTO {
       name: map['full_name'],
       role: map['role'],
       lastUpdate: DateTime.parse(map['last_login_date']),
+      fcmToken:map['fcmToken'] 
     );
   }
 
@@ -32,6 +35,7 @@ class UserDTO {
       'name': name,
       'role': role,
       'lastUpdate': lastUpdate.toIso8601String(),
+      'fcmToken':fcmToken
     };
   }
 

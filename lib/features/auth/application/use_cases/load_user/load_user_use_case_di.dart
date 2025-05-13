@@ -6,6 +6,6 @@ final loadUserCaseProvider = Provider<LoadUserCase>((ref){
 
   final authRepository = ref.read(authRepositoryDi);
 
-  return LoadUserCase(authRepository);
+  return LoadUserCase(authRepository: authRepository);
 
 });

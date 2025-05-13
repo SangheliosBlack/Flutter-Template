@@ -101,4 +101,43 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   }
   
+  @override
+  Future<DataState<UserDTO>> updateFcmToken({required String fcmToken}) async {
+    
+    try {
+
+      final response = await httpClientService.post(path: '/notifications/updateFcmToken',data: {"fcmToken":fcmToken});
+
+      if(response.statusCode == 200){
+
+        final apiResponse = ApiResponse<Map<String, dynamic>>.fromJson(response.data);
+
+        final userLoginResponseDTO = UserDTO.fromJson(apiResponse.data!);
+
+        return DataSuccess(userLoginResponseDTO);
+
+      }else{
+
+        return DataFailed(DioException(
+          message: "The server returned an empty response. This could be due to an issue with the server or a timeout. Please try again later.",
+          requestOptions: RequestOptions(
+            path: '/api/${Environments.API_VERSION}/${Environments.ENVIROMENT}/notifications/updateFcmToken',
+          ),
+        ));
+
+      }
+    
+    } on NetworkException catch (e) {
+
+      return DataFailed(DioException(
+        message: e.message,
+        requestOptions: RequestOptions(
+          path: '/api/${Environments.API_VERSION}/${Environments.ENVIROMENT}/notifications/updateFcmToken',
+        ),
+      ));
+
+    }
+
+  }
+  
 }

@@ -7,5 +7,6 @@ abstract interface class AuthRemoteDataSource {
 
   Future<DataState<UserLoginResponseDTO>> login({required LoginParams params});
   Future<DataState<UserDTO>> userMe();
+  Future<DataState<UserDTO>> updateFcmToken({required String fcmToken});
   
 }

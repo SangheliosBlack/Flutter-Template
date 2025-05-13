@@ -21,6 +21,18 @@ class AuthNavigator{
     },
     builder: (_,__,child) => AuthLayout(child: child),
     routes: [
+         GoRoute(
+        path: NotificationPermission.path,
+        name: NotificationPermission.path,
+        builder: (_,__) => NotificationPermission(),
+        pageBuilder: (context, state) {
+          return PageTransitions.buildPageWithFadeInFromCenter(
+            state: state,
+            context: context,
+            child: const NotificationPermission()
+          );
+        },
+      ),
       GoRoute(
         path: PresentationScreen.path,
         name: PresentationScreen.path,
