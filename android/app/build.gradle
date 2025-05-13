@@ -1,7 +1,18 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    //id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+}
+
+def googleServicesFile = file("${rootProject.projectDir}/app/google-services.json")
+
+if (googleServicesFile.exists()) {
+    apply plugin: 'com.google.gms.google-services'
+} else {
+    println("⚠️ Warning: google-services.json not found. Firebase will not be initialized.")
 }
 
 def localProperties = new Properties()

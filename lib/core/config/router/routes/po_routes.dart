@@ -25,6 +25,7 @@ class PointOfSaleNavigator{
       );
     },
     routes: [
+   
       GoRoute(
         path: PoHomeScreen.path,
         name: PoHomeScreen.path,

@@ -98,6 +98,8 @@ GoRouter appRouter(Ref ref) {
 
         if(location == "/" || location ==  LoginScreen.path){
 
+          //return NotificationPermission.path;
+
           return PoHomeScreen.path;
 
           //return AdminHomeScreen.path;

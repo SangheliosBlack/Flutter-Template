@@ -3,6 +3,7 @@ import 'package:flutter_template/core/resources/data_state.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_provider.dart';
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
 import 'package:flutter_template/core/services/navigation_service/navigation_service.dart';
+import 'package:flutter_template/core/services/notifications_service/notifications_service.dart';
 import 'package:flutter_template/features/auth/application/use_cases/auth_use_cases.dart';
 import 'package:flutter_template/features/auth/application/use_cases/providers/auth_state.dart';
 import 'package:flutter_template/features/auth/domain/params/login_params.dart';
@@ -140,6 +141,29 @@ class Auth extends _$Auth{
 
   }
 
+  Future<void> updateFcmToken() async{
+
+    if(state.user!.fcmToken.isNotEmpty) return;
+
+    final fcmToken = await  NotificationService().requestPermission();
+
+    if(fcmToken != null){
+
+    final response = await authUseCases.updateFcm.execute(fcmToken: fcmToken);
+
+      if(response is DataSuccess){
+
+        state = state.copyWith(
+          user: state.user!.copyWith(
+            fcmToken: fcmToken
+          )
+        );
+
+      }
+
+    }
+
+  }
   Future<void> _authenticationNavigate() async{
 
     final navigate = ref.read(navigationProvider);

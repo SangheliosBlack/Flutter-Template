@@ -46,5 +46,10 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
     return;
 
   }
+  
+  @override
+  Future<DataState<UserEntity>>? updateCachedUser() {
+    throw UnimplementedError();
+  }
 
 }
