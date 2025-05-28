@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/core/config/router/route_observer.dart';
 import 'package:flutter_template/core/utils/transitions/custom_transitions.dart';
-import 'package:flutter_template/features/features_screens.dart';
-import 'package:flutter_template/features/shared/presentation/layouts/admin_layout.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../features/features_screens.dart';
+import '../../../../features/shared/presentation/layouts/admin_layout.dart';
 
 final adminNavigationKey = GlobalKey<NavigatorState>(debugLabel: 'AdminNavigator');
 
@@ -17,7 +17,7 @@ class AdminNavigator{
     ],
     navigatorKey: adminNavigationKey,
      pageBuilder: (context, state, child) {
-      return PageTransitions.buildPageWithFadeInFromCenter(
+      return PageTransitions.buildPageWithFadeAndSlideTransition(
         state: state,
         context: context,
         child: AdminLayout(child: child)
@@ -25,26 +25,14 @@ class AdminNavigator{
     },
     routes: [
       GoRoute(
-        path: AdminHomeScreen.path,
-        name: AdminHomeScreen.path,
-        builder: (_,__) => AdminHomeScreen(),
+        path: DefaultAdminScreen.path,
+        name: DefaultAdminScreen.path,
+        builder: (_,__) => DefaultAdminScreen(),
         pageBuilder: (context, state) {
-          return PageTransitions.buildPageWithFadeInFromCenter(
+          return PageTransitions.buildPageWithFadeAndSlideTransition(
             state: state,
             context: context,
-            child: const AdminHomeScreen()
-          );
-        },
-      ),
-      GoRoute(
-        path: TransportUnitsScreen.path,
-        name: TransportUnitsScreen.path,
-        builder: (_,__) => TransportUnitsScreen(),
-        pageBuilder: (context, state) {
-          return PageTransitions.buildPageWithFadeInFromCenter(
-            state: state,
-            context: context,
-            child: const TransportUnitsScreen()
+            child: const DefaultAdminScreen()
           );
         },
       ),

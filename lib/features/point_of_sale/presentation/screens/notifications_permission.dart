@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/core/config/themes/main_theme.dart';
-import 'package:flutter_template/features/point_of_sale/presentation/widgets/widgets.dart';
 
 class NotificationPermission extends StatelessWidget {
 

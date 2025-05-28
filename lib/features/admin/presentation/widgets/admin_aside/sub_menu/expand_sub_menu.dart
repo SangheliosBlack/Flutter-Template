@@ -15,7 +15,7 @@ class ExpandSubMenu extends StatelessWidget {
     return Expanded(
       child: Container(
         width: .5,
-        color: Colors.white.withValues(alpha: isLast ? 0 : 1),
+        color: Colors.black.withAlpha(isLast ? 0 : 255),
       ),
     );
 

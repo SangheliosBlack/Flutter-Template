@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/config/themes/main_theme.dart';
 
 class CircleAside extends StatelessWidget {
 
@@ -23,14 +22,14 @@ class CircleAside extends StatelessWidget {
         color: Colors.transparent,
         border: Border.all(
           width: 1,
-          color: Colors.white,
+          color: Colors.black,
         )
       ),
       child: AnimatedContainer(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
           color: hover
-            ? AppTheme.primary
+            ? Color(0xffDD052B)
             : Colors.transparent,
         ),
         duration: const Duration(milliseconds: 200),

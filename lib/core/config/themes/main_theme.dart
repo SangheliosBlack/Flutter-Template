@@ -12,6 +12,7 @@ class AppTheme {
   //static const Color backgroundColor = Color.fromRGBO(245,246,248,1	);
   static const Color backgroundColor = Color.fromRGBO(239,	239,	239	,1	);
   static const Color delete = Color.fromRGBO(225,80,98	, 1);
+  static const Color backgroundColorSencondary = Color.fromRGBO(246,246,246,1);
   static ThemeData appTheme = ThemeData(
     appBarTheme: const AppBarTheme(elevation: 0, color: Colors.white, foregroundColor: Colors.grey),
     scaffoldBackgroundColor: Colors.white,
