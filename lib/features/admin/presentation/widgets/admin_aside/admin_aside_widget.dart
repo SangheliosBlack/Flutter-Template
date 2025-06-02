@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/core/config/themes/main_theme.dart';
 import 'package:flutter_template/core/constants/constants_data.dart';
 import 'package:flutter_template/features/admin/domain/domain.dart';
+import 'package:flutter_template/features/admin/presentation/widgets/admin_aside/admin_aside_header.dart';
 import 'package:gap/gap.dart';
 
 import 'admin_aside.dart';
@@ -38,6 +39,8 @@ class _AdminAsideMenuState extends State<AdminAsideMenu> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              AdminAsideHeader(),
+              Gap(15),
               Expanded(
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 500),

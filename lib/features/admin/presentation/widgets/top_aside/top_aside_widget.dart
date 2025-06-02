@@ -11,7 +11,6 @@ class TopAsideWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-    
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15)
@@ -26,7 +25,7 @@ class TopAsideWidget extends StatelessWidget {
         children: [
           UserDataCard(),
           Visibility(
-            visible: false,
+            visible: true,
             child: Row(
               spacing:10,
               children: [

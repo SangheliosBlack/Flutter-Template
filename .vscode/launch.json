@@ -19,7 +19,17 @@
         "--dart-define-from-file=env/dev.json",
         "--web-port",
         "9090",
-        "--web-browser-flag=--disable-web-security",
+        "development"
+      ],
+    },
+    {
+      "name": "Template Flutter Web (PRD)",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define-from-file=env/prd.json",
+        "--web-port",
+        "9090",
         "development"
       ],
     },

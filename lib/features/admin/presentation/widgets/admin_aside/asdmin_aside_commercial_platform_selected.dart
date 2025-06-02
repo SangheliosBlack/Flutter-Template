@@ -11,7 +11,7 @@ class AdminAsideCommercialPlatformSelected extends ConsumerWidget {
 
 
     return Text(
-    "Tittle" , 
+    "Service" , 
     style: GoogleFonts.quicksand(
       color: Colors.black,
       fontWeight: FontWeight.w600,

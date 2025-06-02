@@ -22,10 +22,10 @@ class LogoWiget extends ConsumerWidget {
         ),
         child: Center(
           child: Text(
-            "TEST",
+            "Logo",
             style: GoogleFonts.quicksand(
               color: Colors.white,
-              fontSize: 18
+              fontSize: 10
             ),
           ),
         ),

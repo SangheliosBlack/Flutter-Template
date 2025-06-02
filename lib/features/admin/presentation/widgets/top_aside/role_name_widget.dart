@@ -10,7 +10,7 @@ class RoleNameWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context,ref) {
 
-    final authState = ref.read(authProvider).user;
+    final authState = ref.watch(authProvider).user;
 
     return Text(
       authState!.role.name,

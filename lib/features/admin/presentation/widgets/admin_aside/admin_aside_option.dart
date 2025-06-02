@@ -83,7 +83,7 @@ class _AdminAsideOptionState extends ConsumerState<AdminAsideOption> with Ticker
                       },
             behavior: HitTestBehavior.translucent,
             child: AnimatedContainer(
-              duration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 100),
               decoration: BoxDecoration(
                 color: Color(0xffDD052B).withAlpha(hover ? 255 : 0),
                 borderRadius: BorderRadius.circular(hover ? 20 : 0),

@@ -100,7 +100,7 @@ GoRouter appRouter(Ref ref) {
 
           //return NotificationPermission.path;
 
-          return PoHomeScreen.path;
+          return DefaultAdminScreen.path;
 
           //return AdminHomeScreen.path;
 

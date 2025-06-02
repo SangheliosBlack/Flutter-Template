@@ -91,7 +91,7 @@ class _AdminAsideSubOptionState extends State<AdminAsideSubOption> {
                 Text(
                   widget.adminSubMenuOption.title,
                   style: GoogleFonts.quicksand(
-                    color: AppTheme.error,
+                    color: Colors.black,
                     fontSize: 12
                   ),
                 ),

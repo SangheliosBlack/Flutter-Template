@@ -4,6 +4,7 @@ import 'package:flutter_template/core/services/auth_service/authentication_servi
 import 'package:flutter_template/core/services/auth_service/authentication_service_state.dart';
 import 'package:flutter_template/core/services/navigation_service/navigation_service.dart';
 import 'package:flutter_template/core/services/notifications_service/notifications_service.dart';
+import 'package:flutter_template/features/admin/presentation/screens/default_admin_screen.dart';
 import 'package:flutter_template/features/auth/application/use_cases/auth_use_cases.dart';
 import 'package:flutter_template/features/auth/application/use_cases/providers/auth_state.dart';
 import 'package:flutter_template/features/auth/domain/params/login_params.dart';
@@ -81,6 +82,8 @@ class Auth extends _$Auth{
     try {
       
       final response = await authUseCases.loadUser.execute();
+
+      print(response.data!.name);
 
       state = state.copyWith(
         user: response.data,
@@ -170,7 +173,7 @@ class Auth extends _$Auth{
 
     if (state.authenticationStatus == AuthenticationStatus.authenticated) {
 
-      navigate(PointOfSaleScreen.path);
+      navigate(DefaultAdminScreen.path);
 
     } else if (state.authenticationStatus == AuthenticationStatus.notAuthenticated) {
 

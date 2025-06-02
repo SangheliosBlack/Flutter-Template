@@ -10,30 +10,64 @@ class ContantsData{
 
   static List<MenuOptionEntity> adminListMenuOptions = [
     MenuOptionEntity(titulo: "Home", icono: BootstrapIcons.house, subMenuOptions: []),
-    MenuOptionEntity(titulo: "Tramites", icono: BootstrapIcons.archive, subMenuOptions: [
+    MenuOptionEntity(titulo: "Comunicacion", icono: BootstrapIcons.archive, subMenuOptions: [
       AdminSubMenuOption(
-        title: 'Dashboard', 
+        title: 'Push Notifications', 
+        path: '/ruta'
+      ),
+      AdminSubMenuOption(
+        title: 'In app Messages', 
+        path: '/ruta'
+      ),
+      AdminSubMenuOption(
+        title: 'Deeplinks', 
         path: '/ruta'
       )
     ]),
     MenuOptionEntity(
-      titulo: "Usuarios",
+      titulo: "Registros",
       icono: BootstrapIcons.person,
       subMenuOptions: [
         AdminSubMenuOption(
         title: 'Usuarios', 
         path: '/ruta'
-      )
+      ),
+        AdminSubMenuOption(
+        title: 'Promociones', 
+        path: '/ruta'
+      ),
+        AdminSubMenuOption(
+        title: 'Equipo', 
+        path: '/ruta'
+      ),
       ],
     ),
     MenuOptionEntity(
-      titulo: "Tiempos de espera",
+      titulo: "Noticias",
       icono: BootstrapIcons.calendar_event,
-      subMenuOptions: []),
+      subMenuOptions: [
+        AdminSubMenuOption(
+        title: 'Liberaciones', 
+        path: '/ruta'
+      ) ,
+        AdminSubMenuOption(
+        title: 'Contenido', 
+        path: '/ruta'
+      ) ,
+      AdminSubMenuOption(
+        title: 'Proximamente', 
+        path: '/ruta'
+      ) 
+      ]),
     MenuOptionEntity(
-      titulo: "Referidos",
+      titulo: "Automatización",
       icono: BootstrapIcons.globe_americas,
-      subMenuOptions: [],
+      subMenuOptions: [
+        AdminSubMenuOption(
+        title: 'Identificadores', 
+        path: '/ruta'
+      ) 
+      ],
     ),
   ];
 

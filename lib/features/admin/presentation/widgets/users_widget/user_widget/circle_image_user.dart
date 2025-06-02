@@ -6,14 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AdminUserImageWidget extends ConsumerWidget {
 
-  const AdminUserImageWidget({
-    super.key,
-  });
+  const AdminUserImageWidget({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
 
-    final authState = ref.read(authProvider);
+    final authState = ref.watch(authProvider);
 
     return Container(
       padding: EdgeInsets.all(3),
